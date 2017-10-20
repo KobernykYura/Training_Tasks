@@ -18,25 +18,16 @@ namespace Sorter
             {
                 array[i-1] = i;
             }
-            //----Сортировка через for() loop
-            result = SorterClass.SortAsFor(array);            
-            //Вывод результата
-            Out(ref result, "Сортировка через for()");
-
-            //----Сортировка через GetEnumerator
-            result = SorterClass.SortAsEnumerator(array);
-            //Вывод результата
-            Out(ref result, "Сортировка через Enumerator");
-
-            //----Сортировка через GetEnumerator2
+            
+            //----Сортировка через GetEnumerator()
             result = SorterClass.SortAsEnumerator2(array);
             //Вывод результата
-            Out(ref result, "Сортировка через Enumerator и рекурсию");
+            Out(ref result, "Сортировка через GetEnumerator() и рекурсию");
 
             //----Сортировка к нормальному виду
             result = SorterClass.SortAsEnumerator2(result);
             //Вывод результата
-            Out(ref result, "Сортировка к нормальному виду через рекурсию");
+            Out(ref result, "Обратная сортировка через GetEnumerator() и рекурсию");
         }
         static void Out(ref int[] list, string title)
         {
@@ -46,7 +37,6 @@ namespace Sorter
             {
                 Console.Write("| {0} ", item);
             }
-            Console.WriteLine("\n----------{0}----------------", title);
             Console.ReadLine();
         }
     }
