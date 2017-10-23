@@ -10,7 +10,7 @@ namespace Sorter
     {
         static void Main(string[] args)
         {
-            int n = 1000;
+            int n = 100;
             int[] array = new int[n];
             int[] result;        
             //----Инициализация
