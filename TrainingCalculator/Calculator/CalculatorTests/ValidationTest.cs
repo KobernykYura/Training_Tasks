@@ -15,7 +15,7 @@ namespace CalculatorTests
         /// Attempting to convert "90" string type to double type.
         /// </summary>
         [TestMethod]
-        public void TryDouble_StringAsDouble_True()
+        public void TryDouble_InStringAsDouble_OutTrue()
         {
             var str = "90";
             double res;
@@ -28,7 +28,7 @@ namespace CalculatorTests
         /// Attempting to convert "teststring" string type to double type.
         /// </summary>
         [TestMethod]
-        public void TryDouble_StringAsString_False()
+        public void TryDouble_InStringAsString_OutFalse()
         {
             var str = "teststring";
             double res;
@@ -41,7 +41,7 @@ namespace CalculatorTests
         /// Attempting to convert "1.7976931348623157E+309" string type to double type.
         /// </summary>
         [TestMethod]
-        public void TryDouble_PositiveInfinity_False()
+        public void TryDouble_InPositiveInfinity_OutFalse()
         {
             var str = "1.7976931348623157E+309";
             double res;
@@ -54,7 +54,7 @@ namespace CalculatorTests
         /// Attempting to convert "-1.7976931348623157E+309" string type to double type.
         /// </summary>
         [TestMethod]
-        public void TryDouble_NegativeInfinity_False()
+        public void TryDouble_InNegativeInfinity_OutFalse()
         {
             var str = "-1.7976931348623157E+309";
             double res;
@@ -67,7 +67,7 @@ namespace CalculatorTests
         /// Checking value double type out of range.
         /// </summary>
         [TestMethod]
-        public void IsBordered_NoInfinity_False()
+        public void IsBordered_InNoInfinity_OutFalse()
         {
             var value = 9;
 
@@ -78,7 +78,7 @@ namespace CalculatorTests
         /// Checking value double type out of range.
         /// </summary>
         [TestMethod]
-        public void IsBordered_DoubleTypeBorder_False()
+        public void IsBordered_InDoubleTypeBorder_OutFalse()
         {
             var value1 = 1.7976931348623157E+308;
             var value2 = -1.7976931348623157E+308;

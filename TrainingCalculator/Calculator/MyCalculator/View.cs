@@ -39,37 +39,19 @@ namespace MyCalculator
         /// <param name="y">Prarmeter of <see cref="System.Double" /> type. Value for calculation.</param>
         public static void Menu(double x, double y)
         {
-            CalculatorMethods calculator = new CalculatorMethods();
-
             string arg;
             do
             {
                 Console.WriteLine("Please select an operation + - / * on numbers.\nTo exit, type \"exit\".");
-                arg = Console.ReadLine();
-                // Switch operation.
-                switch (arg)
+                arg = Console.ReadLine();            
+                double mean;
+
+                //----Condition of error message.
+                if (ViewLogic.SwitchCase(arg,x,y, out mean))
                 {
-                    case "+":
-                        Manipulation(x, y, arg, calculator.Summation);
-                        break;
-                    case "*":
-                        Manipulation(x, y, arg, calculator.Multiplication);
-                        break;
-                    case "-":
-                        Manipulation(x, y, arg, calculator.Subtraction);
-                        break;
-                    case "/":
-                        if (y == 0)
-                        {
-                            Console.WriteLine("You can not divide by zero.");
-                            break;
-                        }
-                        Manipulation(x, y, arg, calculator.Division);
-                        break;
-                    default:
-                        Console.WriteLine("Error. Unknown command");
-                        break;
+                    Result(mean, arg, x, y);     //----Execute method <see cref="Result(double, string, double, double)"/>.
                 }
+                else Console.WriteLine("Error. Invalid command\n");
 
                 //----Input of new values.
                 Console.WriteLine("Input new values.");
@@ -79,24 +61,6 @@ namespace MyCalculator
             } while (arg != "exit");
         }
 
-        /// <summary>
-        /// Method of calculator action execution.
-        /// </summary>
-        /// <param name="x">Prarmeter of <see cref="System.Double" /> type. Value for calculation.</param>
-        /// <param name="y">Prarmeter of <see cref="System.Double" /> type. Value for calculation.</param>
-        /// <param name="arg">Name of our operation. Parameter is <see cref="System.String"/> type.</param>
-        /// <param name="func">Delegate <see cref="System.Func{T1, T2, TResult}"/> accepting the method to be executed.</param>
-        public static void Manipulation(double x, double y, string arg, Func<double,double,double> func)
-        {
-            Validation valid = new Validation();
-            double mean = func.Invoke(x, y);//----Result of operation.
-
-            //----Here we check if our values out of <see cref="System.Double" /> range. If IsInfinity() "true", write in console result of <param name="func"/> delegate, else output Error message.
-            if (!valid.IsBordered(x) && !valid.IsBordered(y) && !double.IsInfinity(mean))
-                Result(mean, arg, x, y);     //----Execute method <see cref="Result(double, string, double, double)"/>.
-            else Console.WriteLine("The result exceed the limit value of double type.");
-
-        }
 
         /// <summary>
         /// Provides result <paramref name="result"/> of <paramref name="name"/>operation.

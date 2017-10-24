@@ -23,7 +23,7 @@
             </summary>
             <param name="x">A double precision floating-point number.</param>
             <param name="y">A double precision floating-point number.</param>
-            <returns>The number <paramref name = "x" />, summed with <paramref name = "y" />.</returns>
+            <returns>The number <paramref name = "x" />, substracted with <paramref name = "y" />.</returns>
         </member>
         <member name="M:MyCalculator.CalculatorMethods.Division(System.Double,System.Double)">
             <summary>
@@ -39,7 +39,13 @@
             </summary>
             <param name="x">A double precision floating-point number.</param>
             <param name="y">A double precision floating-point number.</param>
-            <returns>The number <paramref name = "x" />, summed with <paramref name = "y" />.</returns>
+            <returns>The number <paramref name = "x" />, multiplicated with <paramref name = "y" />.</returns>
+        </member>
+        <member name="T:MyCalculator.Interfaces.IMathable`1">
+            <summary>
+            Interface of simple operations.
+            </summary>
+            <typeparam name="T"></typeparam>
         </member>
         <member name="T:MyCalculator.Validation">
             <summary>
@@ -80,15 +86,6 @@
             <param name="x">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
             <param name="y">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
         </member>
-        <member name="M:MyCalculator.View.Manipulation(System.Double,System.Double,System.String,System.Func{System.Double,System.Double,System.Double})">
-            <summary>
-            Method of calculator action execution.
-            </summary>
-            <param name="x">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
-            <param name="y">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
-            <param name="arg">Name of our operation. Parameter is <see cref="T:System.String"/> type.</param>
-            <param name="func">Delegate <see cref="T:System.Func`3"/> accepting the method to be executed.</param>
-        </member>
         <member name="M:MyCalculator.View.Result(System.Double,System.String,System.Double,System.Double)">
             <summary>
             Provides result <paramref name="result"/> of <paramref name="name"/>operation.
@@ -97,6 +94,29 @@
             <param name="name">Prarmeter of <see cref="T:System.String" /> type. The name of operation..</param>
             <param name="x">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
             <param name="y">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.></param>
+        </member>
+        <member name="T:MyCalculator.ViewLogic">
+            <summary>
+            Class of view logic.
+            </summary>
+        </member>
+        <member name="M:MyCalculator.ViewLogic.SwitchCase(System.String,System.Double,System.Double,System.Double@)">
+            <summary>
+            Method for analysis entered operation.
+            </summary>
+            <param name="arg">Name of our operation. Parameter is <see cref="T:System.String"/> type.</param>
+            <param name="x">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
+            <param name="y">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
+            <param name="mean">Output parameter of operation result.</param>
+            <returns>Returns condition if entered key is good.</returns>
+        </member>
+        <member name="M:MyCalculator.ViewLogic.Manipulation(System.Double,System.Double,System.Func{System.Double,System.Double,System.Double})">
+            <summary>
+            Method of calculator action execution.
+            </summary>
+            <param name="x">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
+            <param name="y">Prarmeter of <see cref="T:System.Double" /> type. Value for calculation.</param>
+            <param name="func">Delegate <see cref="T:System.Func`3"/> accepting the method to be executed.</param>
         </member>
     </members>
 </doc>
