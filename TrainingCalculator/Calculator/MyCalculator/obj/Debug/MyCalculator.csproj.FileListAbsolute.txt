@@ -1,0 +1,8 @@
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\bin\Debug\MyCalculator.exe.config
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\bin\Debug\MyCalculator.exe
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\bin\Debug\MyCalculator.pdb
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\bin\Debug\MyCalculator.xml
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\obj\Debug\MyCalculator.csprojResolveAssemblyReference.cache
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\obj\Debug\MyCalculator.csproj.CoreCompileInputs.cache
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\obj\Debug\MyCalculator.exe
+G:\GitHub\Training_Tasks\TrainingCalculator\Calculator\MyCalculator\obj\Debug\MyCalculator.pdb

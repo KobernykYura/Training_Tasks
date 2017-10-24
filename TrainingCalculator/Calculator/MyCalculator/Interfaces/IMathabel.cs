@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MyCalculator.Interfaces
 {
-    interface IMathMetods<T>
+    /// <summary>
+    /// Interface of simple operations.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    interface IMathable<T>
     {
         T Summation(T x, T y);
         T Subtraction(T x, T y);
