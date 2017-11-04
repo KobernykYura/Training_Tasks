@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PointTest</name>
+    </assembly>
+    <members>
+        <member name="T:PointTest.PointExtentionsTest">
+            <summary>
+            Class for testing extention methods for <see cref="T:PointClass.Point"/> class.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExtentionsTest.MoveToTest_In500100_OutTheSame">
+            <summary>
+            Method for testing <see cref="T:PointClass.Point"/>.MoveTo(<see cref="T:PointClass.Point"/>) extention method to positive point.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExtentionsTest.MoveToTest_Inmin400min120_OutTheSame">
+            <summary>
+            Method for testing <see cref="T:PointClass.Point"/>.MoveTo(<see cref="T:PointClass.Point"/>) method with negative point parameters.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExtentionsTest.SumTest_MoveXMoveY">
+            <summary>
+            Method for testing <see cref="T:PointClass.Point"/>.MoveX(<see cref="T:System.Double"/>).MoveY(<see cref="T:System.Double"/>) methods call.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExtentionsTest.SumsTest_null">
+            <summary>
+            Method for testing methods MoveTo() to an empty object.
+            </summary>
+        </member>
+        <member name="T:PointTest.PointOperatorsTest">
+            <summary>
+            Class for testing operators for <see cref="T:PointClass.Point"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointOperatorsTest.SumIncrementOperatorsTest_Summ_Increments">
+            <summary>
+            Testing of increment and plus operators.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointOperatorsTest.MinDecrementTest_Minus_Decrement">
+            <summary>
+            Testing decrement and minus operator.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointOperatorsTest.TrueFalseTest_InNull_OutFalse">
+            <summary>
+            Testing overrided true and false.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointOperatorsTest.ComparationTest">
+            <summary>
+            Testing of comparation operators.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointOperatorsTest.EqualsTest_InNull_OutFalse">
+            <summary>
+            Testing overrided Equals().
+            </summary>
+        </member>
+        <member name="T:PointTest.PointExplicitImplicitTest">
+            <summary>
+            Class of testing of implicit and explicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.Type"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExplicitImplicitTest.ImplicitTest_int">
+            <summary>
+            Testing implicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.Int32"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExplicitImplicitTest.ImplicitTest_double">
+            <summary>
+            TEsting implicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.Double"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExplicitImplicitTest.ExplicitTest_string">
+            <summary>
+            Testing implicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.String"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExplicitImplicitTest.ExplicitTest_int">
+            <summary>
+            Testing implicit convertion <see cref="T:System.Int32"/> to <see cref="T:PointClass.Point"/>.
+            </summary>
+        </member>
+        <member name="M:PointTest.PointExplicitImplicitTest.ExplicitTest_double">
+            <summary>
+            Testing implicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.String"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

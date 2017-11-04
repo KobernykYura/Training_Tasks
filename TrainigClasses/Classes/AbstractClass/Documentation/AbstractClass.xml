@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AbstractClass</name>
+    </assembly>
+    <members>
+        <member name="T:AbstractClass.AbsractPicture">
+            <summary>
+            Abstract class for constructing Picture.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.AbsractPicture._height">
+            <summary>
+            Field of height. Only positive values.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.AbsractPicture._width">
+            <summary>
+            Field of width. Only positive values.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.AbsractPicture._creationDate">
+            <summary>
+            Field of creation <see cref="T:System.DateTime"/>.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.AbsractPicture._colors">
+            <summary>
+            Field of colors <see cref="T:AbstractClass.Color"/>.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.AbsractPicture.Height">
+            <summary>
+            Property of Height field.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.AbsractPicture.Width">
+            <summary>
+            Property of Width field.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.AbsractPicture.Creation">
+            <summary>
+            Property of <see cref="T:System.DateTime"/> field.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.AbsractPicture.Colors">
+            <summary>
+            Property of <see cref="T:AbstractClass.Color"/> field.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor for hight and width of picture.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.#ctor(System.UInt32,System.UInt32,AbstractClass.Color[])">
+            <summary>
+            Constructor for hight and width of picture.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+            <param name="colors">Colors on picture.</param>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.#ctor(System.UInt32,System.UInt32,AbstractClass.Color[],System.DateTime)">
+            <summary>
+            Full constructor of picture class.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+            <param name="colors">Colors on picture.</param>
+            <param name="age">Age of picture.</param>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.ReWrite(System.UInt32,System.UInt32,AbstractClass.Color[])">
+            <summary>
+            Method for rewriting current picture with new color <paramref name="colors"/>, height <paramref name="height"/> and width <paramref name="width"/>.
+            </summary>
+            <param name="height">Hight of the picture.</param>
+            <param name="width">Width of the picture.</param>
+            <param name="colors">Colors what collored this picture. </param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AbstractClass.AbsractPicture.ReWrite(System.UInt32,System.UInt32)" -->
+        <member name="M:AbstractClass.AbsractPicture.ReWrite(AbstractClass.Color[])">
+            <summary>
+            Method for rewriting current picture with new color <paramref name="colors"/>.
+            </summary>
+            <param name="colors">Colors what collored this picture. </param>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.Clean">
+            <summary>
+            Set null value to colors and <see cref="P:System.DateTime.UtcNow"/> to age.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.Delete">
+            <summary>
+            Method for deleting picture. 
+            </summary>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.Save">
+            <summary>
+            Save to default path.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.AbsractPicture.SaveAs(System.String)">
+            <summary>
+            Save to setted path <paramref name="path"/>. 
+            </summary>
+            <param name="path">Path to file.</param>
+        </member>
+        <member name="F:AbstractClass.Color._red">
+            <summary>
+            Code of red.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.Color._green">
+            <summary>
+            Code of green.
+            </summary>
+        </member>
+        <member name="F:AbstractClass.Color._blue">
+            <summary>
+            Code of blue.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.Color.Name">
+            <summary>
+            Property of color name.
+            </summary>
+        </member>
+        <member name="P:AbstractClass.Color.Code">
+            <summary>
+            Property of color code.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Color.#ctor">
+            <summary>
+            Default color constructor.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Color.#ctor(System.Byte)">
+            <summary>
+            Constructor of red color only.
+            </summary>
+            <param name="red">Red color parameter.</param>
+        </member>
+        <member name="M:AbstractClass.Color.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Constructor of red and green in color.
+            </summary>
+            <param name="red">Red color parameter.</param>
+            <param name="green">Green color parameter.</param>
+        </member>
+        <member name="M:AbstractClass.Color.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Constructor of red, green and blue in color.
+            </summary>
+            <param name="red">Red color parameter.</param>
+            <param name="green">Green color parameter.</param>
+            <param name="blue">Blue color parameter.</param>
+        </member>
+        <member name="T:AbstractClass.Picture">
+            <summary>
+            Class of Picture.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Picture.#ctor">
+            <summary>
+            Default constructor from base class <see cref="T:AbstractClass.AbsractPicture"/>.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Picture.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Constructor for hight and width of picture.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+        </member>
+        <member name="M:AbstractClass.Picture.#ctor(System.UInt32,System.UInt32,AbstractClass.Color[])">
+            <summary>
+            Constructor for hight and width of picture with colors.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+            <param name="colors">Colors of picture.</param>
+        </member>
+        <member name="M:AbstractClass.Picture.#ctor(System.UInt32,System.UInt32,AbstractClass.Color[],System.DateTime)">
+            <summary>
+            Full constructor of picture class.
+            </summary>
+            <param name="height">Hight of picture.</param>
+            <param name="width">Wigth of picture.</param>
+            <param name="colors">Colors of picture.</param>
+            <param name="age">Age of picture.</param>
+        </member>
+        <member name="M:AbstractClass.Picture.ReWrite(System.UInt32,System.UInt32,AbstractClass.Color[])">
+            <summary>
+            Method for rewriting current picture with new color <paramref name="colors"/>, height <paramref name="height"/> and width <paramref name="width"/>.
+            </summary>
+            <param name="height">Hight of the picture.</param>
+            <param name="width">Width of the picture.</param>
+            <param name="colors">Colors what collored this picture. </param>
+        </member>
+        <member name="M:AbstractClass.Picture.ReWrite(System.UInt32,System.UInt32)">
+            <summary>
+            Method for rewriting current picture with new height <paramref name="height"/> and width <paramref name="width"/>.
+            </summary>
+            <param name="height">Hight of the picture.</param>
+            <param name="width">Width of the picture.</param>
+        </member>
+        <member name="M:AbstractClass.Picture.ReWrite(AbstractClass.Color[])">
+            <summary>
+            Method for rewriting current picture with new color <paramref name="colors"/>.
+            </summary>
+            <param name="colors">Colors what collored this picture. </param>
+        </member>
+        <member name="M:AbstractClass.Picture.Clean">
+            <summary>
+            Set null value to colors and to <see cref="P:System.DateTime.UtcNow"/> age.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Picture.Delete">
+            <summary>
+            Method for deleting picture. 
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Picture.Save">
+            <summary>
+            Save to default path.
+            </summary>
+        </member>
+        <member name="M:AbstractClass.Picture.SaveAs(System.String)">
+            <summary>
+            Save to setted path <paramref name="path"/>. 
+            </summary>
+            <param name="path">Path to file.</param>
+        </member>
+    </members>
+</doc>

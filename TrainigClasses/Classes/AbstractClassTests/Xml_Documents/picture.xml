@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Pictures>
+  <Picture Creation="2017-10-29T18:55:43.0137618+03:00">
+    <Colors>AbstractClass.ColorAbstractClass.Color</Colors>
+    <Last>300</Last>
+    <Gender>500</Gender>
+  </Picture>
+  <Picture Creation="2017-10-29T15:01:19.4601734+03:00">
+    <Colors>AbstractClass.ColorAbstractClass.Color</Colors>
+    <Last>100</Last>
+    <Gender>50</Gender>
+  </Picture>
+  <Picture Creation="2017-10-29T18:13:47.6672507+03:00">
+    <Colors>0</Colors>
+    <Last>100</Last>
+    <Gender>50</Gender>
+  </Picture>
+  <Picture Creation="2017-10-29T18:13:47.8365398+03:00">
+    <Colors>AbstractClass.ColorAbstractClass.Color</Colors>
+    <Last>300</Last>
+    <Gender>500</Gender>
+  </Picture>
+</Pictures>

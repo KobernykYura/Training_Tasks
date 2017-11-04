@@ -6,35 +6,63 @@ namespace AbstractClass
 {
     public class Color
     {
-        protected string _name;
+        /// <summary>
+        /// Code of red.
+        /// </summary>
         protected byte _red;
+        /// <summary>
+        /// Code of green.
+        /// </summary>
         protected byte _green;
+        /// <summary>
+        /// Code of blue.
+        /// </summary>
         protected byte _blue;
 
-        public string Name { get => _name; set => _name = value; }
+        /// <summary>
+        /// Property of color name.
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
+        /// Property of color code.
+        /// </summary>
         public string Code { get => (_red + _green + _blue).ToString(); }
 
+        /// <summary>
+        /// Default color constructor.
+        /// </summary>
         public Color()
         {
-            _name = "White";
             _red = 0;
             _green = 0;
             _blue = 0;
         }
-        public Color(string name, byte red)
+        /// <summary>
+        /// Constructor of red color only.
+        /// </summary>
+        /// <param name="red">Red color parameter.</param>
+        public Color(byte red) : this()
         {
-            _name = name;
             _red = red;
         }
-        public Color(string name, byte red, byte green):this(name, red)
+        /// <summary>
+        /// Constructor of red and green in color.
+        /// </summary>
+        /// <param name="red">Red color parameter.</param>
+        /// <param name="green">Green color parameter.</param>
+        public Color(byte red, byte green):this(red)
         {
-            _name = name;
             _red = red;
             _green = green;
         }
-        public Color(string name, byte red, byte green, byte blue) : this(name, red, green) 
+        /// <summary>
+        /// Constructor of red, green and blue in color.
+        /// </summary>
+        /// <param name="red">Red color parameter.</param>
+        /// <param name="green">Green color parameter.</param>
+        /// <param name="blue">Blue color parameter.</param>
+        public Color(byte red, byte green, byte blue) : this(red, green) 
         {
-            _name = name;
             _red = red;
             _green = green;
             _blue = blue;

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PartialClass</name>
+    </assembly>
+    <members>
+        <member name="T:PartialClass.Money">
+            <summary>
+            Main part of class Money, to change currency and constructors.
+            </summary>
+            <summary>
+            Part of class Money, to collect money. 
+            </summary>
+            <summary>
+            Part of class Money, to spend money.
+            </summary>
+        </member>
+        <member name="F:PartialClass.Money._count">
+            <summary>
+            Amount of money.
+            </summary>
+        </member>
+        <member name="F:PartialClass.Money._currency">
+            <summary>
+            Currency of money.
+            </summary>
+        </member>
+        <member name="M:PartialClass.Money.#ctor(System.UInt32,System.String)">
+            <summary>
+            Constructor with all parameters of main part.
+            </summary>
+            <param name="count">Amount of money.</param>
+            <param name="currency">Currency of money.</param>
+        </member>
+        <member name="M:PartialClass.Money.ChangeСurrency(System.String,System.Byte)">
+            <summary>
+            Change currency and recount money.
+            </summary>
+            <param name="currency">Parameter of type <see cref="T:System.String"/>. New currency.</param>
+            <param name="coefficient">Parameter of type <see cref="T:System.Byte"/>. Coefficient of new currency.</param>
+            <returns>How much money we have after changing.</returns>
+        </member>
+        <member name="M:PartialClass.Money.InBank(System.Byte,System.Byte)">
+            <summary>
+            Method for collecting money in bank.
+            </summary>
+            <param name="years">Parameter of type <see cref="T:System.Byte"/>.How many years we want to collect them.</param>
+            <param name="coefficient">The growth rate of profit. Parameter of type <see cref="T:System.Byte"/>.</param>
+            <returns>How much money collected.</returns>
+        </member>
+        <member name="M:PartialClass.Money.AtHome(System.Byte)">
+            <summary>
+            Method for collecting money at home.
+            </summary>
+            <param name="months">Parameter of type <see cref="T:System.Byte"/>. Number of monthes while we collect money.</param>
+            <returns>How much money collected.</returns>
+        </member>
+        <member name="M:PartialClass.Money.InCasino(System.Byte,System.Byte)">
+            <summary>
+            Method of spending money in casino.
+            </summary>
+            <param name="hours">The amount of time spent at a casino.</param>
+            <param name="price">The price for the entrance to the casino.</param>
+            <returns>How much money left.</returns>
+        </member>
+        <member name="M:PartialClass.Money.RepayDebt(System.Byte)">
+            <summary>
+            Method of paying the debt.
+            </summary>
+            <param name="debt">Debt required in return.</param>
+            <returns>How much money left.</returns>
+        </member>
+    </members>
+</doc>

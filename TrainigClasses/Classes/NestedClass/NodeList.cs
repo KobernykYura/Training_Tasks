@@ -1,30 +1,44 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace NestedClass
 {
-    public class NodeList<T>
+    /// <summary>
+    /// Node collection.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class NodeList<T> : IEnumerable<T>
     {
         /// <summary>
         /// Neasted class for working with Node in linked list.
         /// We could write Node instead of Node<T>, because neasted class can see members(even private)
         /// of outer class.
-        /// </summary>
         /// <typeparam name="T">Parameter of generalized type.</typeparam>
+        /// </summary>
         public class Node
         {
+            /// <summary>
+            /// Node constructor.
+            /// </summary>
+            /// <param name="data"></param>
             public Node(T data)
             {
                 Data = data;
             }
-            // Value of this node.
+            /// Value of this node.
             public T Data { get; set; }
-            // Reference to next node.
+            /// Reference to next node.
             public Node Next { get; set; }
         }
 
         Node head; // Head element of list.
         Node tail; // Tail element of list.
         int count;  // Count of elements in list.
+
+        public int Count { get => count; } // Property of count elements in list.
+        public Node Tail { get => tail; }  // Tail of list.
+        public Node Head { get => head; }  // Head of list.
 
         /// <summary>
         /// Adding new element to list.
@@ -79,6 +93,27 @@ namespace NestedClass
                 current = current.Next;
             }
             return false;
+        }
+        /// <summary>
+        /// Implementation of <see cref="IEnumerable{T}"/>.
+        /// </summary>
+        /// <returns>Enumerated element.</returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)this).GetEnumerator();
+        }
+        /// <summary>
+        /// Implementation of <see cref="IEnumerable{T}"/>.
+        /// </summary>
+        /// <returns>Enumerated element.</returns>
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            Node current = head;
+            while (current != null)
+            {
+                yield return current.Data;
+                current = current.Next;
+            }
         }
     }
 }

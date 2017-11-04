@@ -9,10 +9,14 @@ namespace AbstractClass
     /// <summary>
     /// Class of Picture.
     /// </summary>
-    class Picture : AbsractPicture
+    public class Picture : AbsractPicture
     {
-        private string PATH_TO_FILE = @"C:\SomeDir\noname\picture.xml"; 
+        private string PATH_TO_FILE = @"..\..\Xml_Documents\picture2.xml"; 
 
+
+        /// <summary>
+        /// Default constructor from base class <see cref="AbsractPicture"/>.
+        /// </summary>
         public Picture() : base() 
         {
 
@@ -22,22 +26,33 @@ namespace AbstractClass
         /// </summary>
         /// <param name="height">Hight of picture.</param>
         /// <param name="width">Wigth of picture.</param>
-        public Picture(uint height, uint width) : base(height, width) 
+        public Picture(uint height, uint width) : base(height, width)
         {
             this._height = height;
             this._width = width;
+        }
+        /// <summary>
+        /// Constructor for hight and width of picture with colors.
+        /// </summary>
+        /// <param name="height">Hight of picture.</param>
+        /// <param name="width">Wigth of picture.</param>
+        /// <param name="colors">Colors of picture.</param>
+        public Picture(uint height, uint width, Color[] colors) : base(height, width, colors)
+        {
+
         }
         /// <summary>
         /// Full constructor of picture class.
         /// </summary>
         /// <param name="height">Hight of picture.</param>
         /// <param name="width">Wigth of picture.</param>
+        /// <param name="colors">Colors of picture.</param>
         /// <param name="age">Age of picture.</param>
-        /// <param name="popular">If this picture popular.</param>
-        public Picture(uint height, uint width, DateTime age) : base(height, width) 
+        public Picture(uint height, uint width, Color[] colors, DateTime age) : base(height, width, colors) 
         {
             this._creationDate = age;
         }
+
 
         /// <summary>
         /// Method for rewriting current picture with new color <paramref name="colors"/>, height <paramref name="height"/> and width <paramref name="width"/>.
@@ -73,7 +88,7 @@ namespace AbstractClass
             this.Creation = DateTime.UtcNow;
         }
         /// <summary>
-        /// Set null value to colors and age <see cref="DateTime.UtcNow"/>
+        /// Set null value to colors and to <see cref="DateTime.UtcNow"/> age.
         /// </summary>
         public override void Clean()
         {
@@ -95,17 +110,17 @@ namespace AbstractClass
         /// </summary>
         public override void Save()
         {
-            using(FileStream fstream = new FileStream(PATH_TO_FILE, FileMode.OpenOrCreate))
+            using (FileStream stream = new FileStream(PATH_TO_FILE,FileMode.OpenOrCreate))
             {
-                XDocument xdoc = XDocument.Load(PATH_TO_FILE);
+                XDocument xdoc = XDocument.Load(stream);
                 XElement root = xdoc.Element("Pictures");
 
-                root.Add(new XElement("Picture",
-                new XElement("Height", this.Height),
-                new XElement("Width", this.Width),
-                new XElement("Creation date", this.Creation),
-                new XElement("Colors", this.Colors)));
-                xdoc.Save(PATH_TO_FILE);
+                root.AddFirst(new XElement("Picture",
+                new XAttribute("Creation", this.Creation),
+                new XElement("Colors", this.Colors[0].Code),
+                new XElement("Last", this.Height),
+                new XElement("Gender", this.Width)));
+                xdoc.Save(stream);
             }
         }
         /// <summary>
@@ -116,17 +131,17 @@ namespace AbstractClass
         {
             PATH_TO_FILE = path;
 
-            using (FileStream fstream = new FileStream(PATH_TO_FILE, FileMode.OpenOrCreate))
+            using (FileStream stream = new FileStream(PATH_TO_FILE, FileMode.OpenOrCreate, FileAccess.Write))
             {
-                XDocument xdoc = XDocument.Load(PATH_TO_FILE);
+                XDocument xdoc = XDocument.Load(stream);
                 XElement root = xdoc.Element("Pictures");
 
-                root.Add(new XElement("Picture",
-                new XElement("Height", this.Height),
-                new XElement("Width", this.Width),
-                new XElement("Creation date", this.Creation),
-                new XElement("Colors", this.Colors)));
-                xdoc.Save(PATH_TO_FILE);
+                root.AddFirst(new XElement("Picture",
+                new XAttribute("Creation", this.Creation),
+                new XElement("Colors", this.Colors),
+                new XElement("Last", this.Height),
+                new XElement("Gender", this.Width)));
+                xdoc.Save(stream);
             }
         }
         

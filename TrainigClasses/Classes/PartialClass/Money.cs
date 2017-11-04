@@ -7,7 +7,13 @@ namespace PartialClass
     /// </summary>
     public partial class Money : IConvertible
     {
+        /// <summary>
+        /// Amount of money.
+        /// </summary>
         protected ulong _count;
+        /// <summary>
+        /// Currency of money.
+        /// </summary>
         protected string _currency;
 
         public ulong Count { get => _count; set => this._count = value; }
@@ -21,9 +27,8 @@ namespace PartialClass
         /// <summary>
         /// Constructor with all parameters of main part.
         /// </summary>
-        /// <param name="volume"></param>
-        /// <param name="manufacturer"></param>
-        /// <param name="material"></param>
+        /// <param name="count">Amount of money.</param>
+        /// <param name="currency">Currency of money.</param>
         public Money(uint count, string currency)
         {
             this._count = count;
@@ -35,7 +40,7 @@ namespace PartialClass
         /// </summary>
         /// <param name="currency">Parameter of type <see cref="String"/>. New currency.</param>
         /// <param name="coefficient">Parameter of type <see cref="byte"/>. Coefficient of new currency.</param>
-        /// <returns></returns>
+        /// <returns>How much money we have after changing.</returns>
         public ulong ChangeСurrency(string currency, byte coefficient)
         {
             if (Count != 0)

@@ -1,17 +1,21 @@
 ﻿using System;
 
-namespace PasswordCode
+namespace EncriptionCode
 {
     /// <summary>
     /// Class for encode and decode of <see cref="string"/> line. 
     /// </summary>
     public static class Encryption
     {
+        private static class Neasted
+        {
+
+        }
         /// <summary>
         /// Encode line in new format.
         /// </summary>
-        /// <param name="line">Line for encryption.</param>
-        /// <returns>Encrypted line.</returns>
+        /// <param name="line">Line for encoding.</param>
+        /// <returns>Encoded value of <see cref="String"/> type.</returns>
         public static string Encode(string line)
         {
             string enCode = default(string);
@@ -28,8 +32,8 @@ namespace PasswordCode
         /// <summary>
         /// Decode a previously encoded string line.
         /// </summary>
-        /// <param name="line"></param>
-        /// <returns></returns>
+        /// <param name="line">Line for decoding</param>
+        /// <returns>Decoded value of <see cref="String"/> type.</returns>
         public static string Decode(string line)
         {
             string deCode = default(string);

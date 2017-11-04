@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Singletone</name>
+    </assembly>
+    <members>
+        <member name="T:Singletone.NoSingletone">
+            <summary>
+            My sealed Singleton implementation.
+            </summary>
+        </member>
+        <member name="F:Singletone.NoSingletone._coun">
+            <summary>
+            Count of Singleton realisation.
+            </summary>
+        </member>
+        <member name="M:Singletone.NoSingletone.#ctor">
+            <summary>
+            Private constructor.
+            </summary>
+        </member>
+        <member name="P:Singletone.NoSingletone.Instance">
+            <summary>
+            Static property of singeltone getter.
+            </summary>
+        </member>
+        <member name="P:Singletone.NoSingletone.AppDomainCurrent">
+            <summary>
+            Property of domain result.
+            </summary>
+        </member>
+        <member name="P:Singletone.NoSingletone.AppDomainFriendly">
+            <summary>
+            Property of frirndly domin name.
+            </summary>
+        </member>
+        <member name="P:Singletone.NoSingletone.AppDomainId">
+            <summary>
+            Property of application domain id.
+            </summary>
+        </member>
+        <member name="P:Singletone.NoSingletone.Result">
+            <summary>
+            Property of method call result.
+            </summary>
+        </member>
+    </members>
+</doc>

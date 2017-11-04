@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SealedClass</name>
+    </assembly>
+    <members>
+        <member name="T:SealedClass.MailRegistration">
+            <summary>
+            Sealed class of mail autorisation. 
+            </summary>
+        </member>
+        <member name="M:SealedClass.MailRegistration.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creating user of mail platform.
+            </summary>
+            <param name="name">User's name. Parameter <paramref name="name"/> of <see cref="T:System.String"/> type.</param>
+            <param name="password">Password of account. Parameter <paramref name="password"/> of <see cref="T:System.String"/> type.</param>
+            <param name="smtpServer">Smtp user's server address. Parameter <paramref name="smtpServer"/> of <see cref="T:System.String"/> type.</param>
+            <param name="mailAddress">Address of sender. Parameter <paramref name="mailAddress"/> of <see cref="T:System.String"/> type.</param>
+        </member>
+        <member name="T:SealedClass.Registration">
+            <summary>
+            Abstract class of regicstration.
+            </summary>
+        </member>
+        <member name="M:SealedClass.Registration.#ctor(System.String,System.String)">
+            <summary>
+            Constructor of registration as user with the name and password. Permititon level is <see cref="F:SealedClass.Registration.PermissionLevel.User"/>.
+            </summary>
+            <param name="name">Parameter of user's name. Type is <see cref="T:System.String"/>.</param>
+            <param name="password">User's password. Type of parameter <see cref="T:System.String"/></param>
+        </member>
+        <member name="M:SealedClass.Registration.#ctor(System.String,System.String,SealedClass.Registration.PermissionLevel)">
+            <summary>
+            Constructor for full registration.
+            </summary>
+            <param name="name">Register name of <see cref="T:System.String"/> type.</param>
+            <param name="password">Regster password of <see cref="T:System.String"/> type.</param>
+            <param name="level">Registration level of <see cref="T:SealedClass.Registration.PermissionLevel"/> enum type.</param>
+        </member>
+        <member name="M:SealedClass.Registration.Save(System.String)">
+            <summary>
+            Method of saving user's account settings.
+            </summary>
+        </member>
+        <member name="M:SealedClass.Registration.Clean">
+            <summary>
+            Method of cleaning user's account settings.
+            </summary>
+        </member>
+        <member name="T:SealedClass.SiteRegistration">
+            <summary>
+            Sealed class of site autorisation. 
+            </summary>
+        </member>
+        <member name="M:SealedClass.SiteRegistration.#ctor">
+            <summary>
+            Constructor of default registration.
+            </summary>
+        </member>
+        <member name="M:SealedClass.SiteRegistration.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor of reistration 
+            </summary>
+            <param name="name">Parameter <paramref name="name"/> of <see cref="T:System.String"/> type.</param>
+            <param name="password">Parameter <paramref name="password"/> of <see cref="T:System.String"/> type.</param>
+            <param name="accName">Parameter <paramref name="accName"/> of <see cref="T:System.String"/> type.</param>
+            <param name="mailAddress">Parameter <paramref name="mailAddress"/> of <see cref="T:System.String"/> type.</param>
+        </member>
+        <member name="M:SealedClass.SiteRegistration.#ctor(System.String,System.String,System.String,System.String,SealedClass.SiteRegistration.SocialNetwork)">
+            <summary>
+            Construcror of registration with social networks.
+            </summary>
+            <param name="name">Parameter <paramref name="name"/> of <see cref="T:System.String"/> type.</param>
+            <param name="password">Parameter <paramref name="password"/> of <see cref="T:System.String"/> type.</param>
+            <param name="accName">Parameter <paramref name="accName"/> of <see cref="T:System.String"/> type.</param>
+            <param name="mailAddress">Parameter <paramref name="mailAddress"/> of <see cref="T:System.String"/> type.</param>
+            <param name="network">Parameter <paramref name="network"/> of <see cref="T:System.String"/> type.</param>
+        </member>
+        <member name="M:SealedClass.SiteRegistration.#ctor(System.String,System.String,System.String,System.String,SealedClass.Registration.PermissionLevel)">
+            <summary>
+            Constructor of registration with setting permition level.
+            </summary>
+            <param name="name">User's name. Parameter <paramref name="name"/> of <see cref="T:System.String"/> type.</param>
+            <param name="password">Password of account. Parameter <paramref name="password"/> of <see cref="T:System.String"/> type.</param>
+            <param name="accName">Name of user's account. Parameter <paramref name="accName"/> of <see cref="T:System.String"/> type.</param>
+            <param name="mailAddress">Mail address. Parameter <paramref name="mailAddress"/> of <see cref="T:System.String"/> type.</param>
+            <param name="level">Level permition. Parameter <paramref name="level"/> of <see cref="T:System.String"/> type.</param>
+        </member>
+    </members>
+</doc>

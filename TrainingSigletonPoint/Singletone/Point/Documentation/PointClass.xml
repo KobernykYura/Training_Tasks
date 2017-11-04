@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PointClass</name>
+    </assembly>
+    <members>
+        <member name="T:PointClass.Point">
+            <summary>
+            Part of the class with fields, properties, constructors.
+            </summary>
+            <summary>
+            Part of class with overrided operators.
+            </summary>
+        </member>
+        <member name="M:PointClass.Point.op_Implicit(PointClass.Point)~System.Double">
+            <summary>
+            Implicit convertion <see cref="T:PointClass.Point"/> to <see cref="T:System.Double"/>.
+            </summary>
+            <param name="point"><see cref="T:PointClass.Point"/> to conversion.</param>
+        </member>
+        <member name="M:PointClass.Point.op_Implicit(PointClass.Point)~System.Int32">
+            <summary>
+            Implicit conversion <see cref="T:PointClass.Point"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="point"><see cref="T:PointClass.Point"/> to conversion.</param>
+        </member>
+        <member name="M:PointClass.Point.op_Explicit(PointClass.Point)~System.String">
+            <summary>
+            Explicit conversion <see cref="T:PointClass.Point"/> to <see cref="T:System.String"/>.
+            </summary>
+            <param name="point">String of <see cref="T:PointClass.Point"/>.</param>
+        </member>
+        <member name="M:PointClass.Point.op_Explicit(System.Int32)~PointClass.Point">
+            <summary>
+            Explicit conversion <see cref="T:System.Int32"/> to <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="intValue">New object of <see cref="T:PointClass.Point"/> type.</param>
+        </member>
+        <member name="M:PointClass.Point.op_Explicit(System.Double)~PointClass.Point">
+            <summary>
+            Explicit conversion <see cref="T:System.Double"/> to <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="doubleValue">New object of <see cref="T:PointClass.Point"/>.</param>
+        </member>
+        <member name="M:PointClass.Point.ToString">
+            <summary>
+            Overrided <see cref="T:System.Object"/> method. 
+            </summary>
+            <returns>Result <see cref="T:System.String"/> type.</returns>
+        </member>
+        <member name="M:PointClass.Point.#ctor(System.Double)">
+            <summary>
+            Constructor of <see cref="T:PointClass.Point"/> with X asix.
+            </summary>
+            <param name="X">Parameter of <see cref="T:System.Double"/> type.</param>
+        </member>
+        <member name="M:PointClass.Point.#ctor(System.Double,System.Double)">
+            <summary>
+            Constructor of <see cref="T:PointClass.Point"/> with X and Y asixs.
+            </summary>
+            <param name="X">Parameter of <see cref="T:System.Double"/> type.</param>
+            <param name="Y">Parameter of <see cref="T:System.Double"/> type.</param>
+        </member>
+        <member name="P:PointClass.Point.X">
+            <summary>
+            Property of X asix.
+            </summary>
+        </member>
+        <member name="P:PointClass.Point.Y">
+            <summary>
+            Property of Y asix.
+            </summary>
+        </member>
+        <member name="M:PointClass.Point.op_Addition(PointClass.Point,PointClass.Point)">
+            <summary>
+            + operator.
+            </summary>
+            <param name="first">Left parameter.</param>
+            <param name="secound">Right paarmeter.</param>
+            <returns>New Point object.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_Subtraction(PointClass.Point,PointClass.Point)">
+            <summary>
+            - operator.
+            </summary>
+            <param name="first">Left parameter.</param>
+            <param name="secound">Right parameter.</param>
+            <returns>New Point object.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_Increment(PointClass.Point)">
+            <summary>
+            ++ increment.
+            </summary>
+            <param name="point">incremented parameter.</param>
+            <returns>New Point object.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_Decrement(PointClass.Point)">
+            <summary>
+            -- decrement.
+            </summary>
+            <param name="point">decrement paarmeter.</param>
+            <returns>New decremeented Point object.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_True(PointClass.Point)">
+            <summary>
+             operator true.
+            </summary>
+            <param name="point">parameter for booling.</param>
+            <returns>true, if point not null, false if null.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_False(PointClass.Point)">
+            <summary>
+            operator false.
+            </summary>
+            <param name="point">parameter for booling.</param>
+            <returns>true, if point null, false if not null.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_Equality(PointClass.Point,PointClass.Point)">
+            <summary>
+            Equality of two points.
+            </summary>
+            <param name="first">Left parameter.</param>
+            <param name="secound">Right parameter.</param>
+            <returns>Result <see cref="T:System.Boolean"/> of comparation.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_Inequality(PointClass.Point,PointClass.Point)">
+            <summary>
+            Inequality of two <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="first">Left <see cref="T:PointClass.Point"/> parameter.</param>
+            <param name="secound">Right <see cref="T:PointClass.Point"/> parameter.</param>
+            <returns>Result of comparation elements.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_GreaterThanOrEqual(PointClass.Point,PointClass.Point)">
+            <summary>
+            More or equal of two <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="first">Left <see cref="T:PointClass.Point"/> parameter.</param>
+            <param name="secound">Right <see cref="T:PointClass.Point"/> parameter.</param>
+            <returns>Result of comparation elements.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_LessThanOrEqual(PointClass.Point,PointClass.Point)">
+            <summary>
+            Less or equal of two <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="first">Left <see cref="T:PointClass.Point"/> parameter.</param>
+            <param name="secound">Right <see cref="T:PointClass.Point"/> parameter.</param>
+            <returns>Result of comparation elements.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_GreaterThan(PointClass.Point,PointClass.Point)">
+            <summary>
+            More than of two <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="first">Left <see cref="T:PointClass.Point"/> parameter.</param>
+            <param name="secound">Right <see cref="T:PointClass.Point"/> parameter.</param>
+            <returns>Result of comparation elements.</returns>
+        </member>
+        <member name="M:PointClass.Point.op_LessThan(PointClass.Point,PointClass.Point)">
+            <summary>
+            Less than of two <see cref="T:PointClass.Point"/>.
+            </summary>
+            <param name="first">Left <see cref="T:PointClass.Point"/> parameter.</param>
+            <param name="secound">Right <see cref="T:PointClass.Point"/> parameter.</param>
+            <returns>Result of comparation elements.</returns>
+        </member>
+        <member name="M:PointClass.Point.Equals(System.Object)">
+            <summary>
+            Overrided Equal().
+            </summary>
+            <param name="obj">Object typr <see cref="T:PointClass.Point"/> to compare.</param>
+            <returns>Comparation result <see cref="T:System.Boolean"/>.</returns>
+        </member>
+        <member name="M:PointClass.Point.GetHashCode">
+            <summary>
+            Get hash code overrided method.
+            </summary>
+            <returns>Returns hash code of <see cref="T:System.Int32"/> type.</returns>
+        </member>
+        <member name="T:PointClass.PointExtentions">
+            <summary>
+            Class of extention methods for <see cref="T:PointClass.Point"/> class.
+            </summary>
+        </member>
+        <member name="M:PointClass.PointExtentions.MoveX(PointClass.Point,System.Double)">
+            <summary>
+            Method of moving <see cref="T:PointClass.Point"/> on the X axis.
+            </summary>
+            <param name="point">Left <see cref="T:PointClass.Point"/> type parameter.</param>
+            <param name="moveTo">Paramrter of <see cref="T:System.Double"/> type. Current <paramref name="point"/> travel distance.</param>
+            <returns>Current <see cref="T:PointClass.Point"/>.</returns>
+        </member>
+        <member name="M:PointClass.PointExtentions.MoveY(PointClass.Point,System.Double)">
+            <summary>
+            Method of moving <see cref="T:PointClass.Point"/> on the Y axis.
+            </summary>
+            <param name="point">Left <see cref="T:PointClass.Point"/> type parameter.</param>
+            <param name="moveTo">Paramrter of <see cref="T:System.Double"/> type. Current <paramref name="point"/> travel distance.</param>
+            <returns>Current <see cref="T:PointClass.Point"/>.</returns>
+        </member>
+        <member name="M:PointClass.PointExtentions.MoveTo(PointClass.Point,System.Double,System.Double)">
+            <summary>
+            Method of moving <see cref="T:PointClass.Point"/> on the X and Y axis.
+            </summary>
+            <param name="point">Left <see cref="T:PointClass.Point"/> type parameter.</param>
+            <param name="moveX">Paramrter of <see cref="T:System.Double"/> type. Current <paramref name="point"/> <see cref="P:PointClass.Point.X"/> travel distance.</param>
+            <param name="moveY">Paramrter of <see cref="T:System.Double"/> type. Current <paramref name="point"/> <see cref="P:PointClass.Point.Y"/> travel distance.</param>
+            <returns>Current moved <see cref="T:PointClass.Point"/>.</returns>
+        </member>
+        <member name="M:PointClass.PointExtentions.MoveTo(PointClass.Point,PointClass.Point)">
+            <summary>
+            Method of moving current <see cref="T:PointClass.Point"/> at new <see cref="T:PointClass.Point"/> .
+            </summary>
+            <param name="point">Left <see cref="T:PointClass.Point"/> type parameter.</param>
+            <param name="moveTo">Paramrter of <see cref="T:System.Double"/> type. Current <paramref name="point"/> travel distance.</param>
+            <returns>Current moved <see cref="T:PointClass.Point"/>.</returns>
+        </member>
+    </members>
+</doc>

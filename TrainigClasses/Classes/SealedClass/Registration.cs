@@ -1,10 +1,13 @@
 ﻿using System;
-using PasswordCode;
+using EncriptionCode;
 using System.IO;
 using System.Xml.Linq;
 
 namespace SealedClass
 {
+    /// <summary>
+    /// Abstract class of regicstration.
+    /// </summary>
     public abstract class Registration
     {
         protected string _userName; // User's name
@@ -58,16 +61,17 @@ namespace SealedClass
             if ((UserName != default(string) && UserName != "Guest") &&
                 Password != default(string) && (Level != PermissionLevel.Reader && Level != 0))
             {
-                using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+                using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
                 {
-                    XDocument xdoc = XDocument.Load(path);
+                    // Saving in XML file
+                    XDocument xdoc = XDocument.Load(stream);
                     XElement root = xdoc.Element("Users");
 
                     root.Add(new XElement("User",
                     new XAttribute("Permition", this.Level),
                     new XElement("Name", this.UserName),
                     new XElement("Password", Encryption.Decode(this.Password))));
-                    xdoc.Save(path);
+                    xdoc.Save(stream);
                 }
             }
         }
@@ -79,6 +83,7 @@ namespace SealedClass
             if ((UserName != default(string) && UserName != "Guest") &&
                 Password != default(string) && (Level != PermissionLevel.Reader && Level != 0))
             {
+                // Set "clean" values
                 UserName = "Guest";
                 Level = PermissionLevel.Reader;
                 Password = default(string);

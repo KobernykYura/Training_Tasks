@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SingletonTests</name>
+    </assembly>
+    <members>
+        <member name="T:SingletonTests.NoSingletonTest">
+            <summary>
+            Class for testing NoSingleton. 
+            </summary>
+        </member>
+        <member name="M:SingletonTests.NoSingletonTest.SingletonCreationTest">
+            <summary>
+            Testing getter of singleton.
+            </summary>
+        </member>
+        <member name="M:SingletonTests.NoSingletonTest.SingletonPropertyTest_IfReturnSameProperty">
+            <summary>
+            Testing propertys of singleton.
+            </summary>
+        </member>
+        <member name="M:SingletonTests.NoSingletonTest.SingletonMethodTest_IfMehodChangeSameValueInClass">
+            <summary>
+            Testing methods of Singleton.
+            </summary>
+        </member>
+    </members>
+</doc>

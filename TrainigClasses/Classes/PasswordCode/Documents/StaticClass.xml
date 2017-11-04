@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StaticClass</name>
+    </assembly>
+    <members>
+        <member name="T:EncriptionCode.Encryption">
+            <summary>
+            Class for encode and decode of <see cref="T:System.String"/> line. 
+            </summary>
+        </member>
+        <member name="M:EncriptionCode.Encryption.Encode(System.String)">
+            <summary>
+            Encode line in new format.
+            </summary>
+            <param name="line">Line for encoding.</param>
+            <returns>Encoded value of <see cref="T:System.String"/> type.</returns>
+        </member>
+        <member name="M:EncriptionCode.Encryption.Decode(System.String)">
+            <summary>
+            Decode a previously encoded string line.
+            </summary>
+            <param name="line">Line for decoding</param>
+            <returns>Decoded value of <see cref="T:System.String"/> type.</returns>
+        </member>
+    </members>
+</doc>

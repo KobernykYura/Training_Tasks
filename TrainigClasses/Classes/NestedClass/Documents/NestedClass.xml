@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NestedClass</name>
+    </assembly>
+    <members>
+        <member name="T:NestedClass.NodeList`1">
+            <summary>
+            Node collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:NestedClass.NodeList`1.Node" -->
+        <member name="M:NestedClass.NodeList`1.Node.#ctor(`0)">
+            <summary>
+            Node constructor.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:NestedClass.NodeList`1.Node.Data">
+            Value of this node.
+        </member>
+        <member name="P:NestedClass.NodeList`1.Node.Next">
+            Reference to next node.
+        </member>
+        <member name="M:NestedClass.NodeList`1.Add(`0)">
+            <summary>
+            Adding new element to list.
+            </summary>
+            <param name="data">Value for adding to current list.</param>
+        </member>
+        <member name="M:NestedClass.NodeList`1.Remove(`0)">
+            <summary>
+            Removing element from list.
+            </summary>
+            <param name="data">Value to remove.</param>
+            <returns></returns>
+        </member>
+        <member name="M:NestedClass.NodeList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Implementation of <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <returns>Enumerated element.</returns>
+        </member>
+        <member name="M:NestedClass.NodeList`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+            <summary>
+            Implementation of <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+            <returns>Enumerated element.</returns>
+        </member>
+    </members>
+</doc>
