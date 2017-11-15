@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Services</name>
+    </assembly>
+    <members>
+        <member name="M:Services.UserService.#ctor(Services.DataAccess.IUserRepository)">
+            <summary>
+            Repository constructor.
+            </summary>
+            <param name="repository">Our connected repository. Must implement <see cref="T:Services.DataAccess.IUserRepository"/>.</param>
+        </member>
+        <member name="M:Services.UserService.Register(Services.Common.User)">
+            <summary>
+            Registration of new user.
+            </summary>
+            <param name="user">User for registration.</param>
+        </member>
+        <member name="M:Services.UserService.GetUser(System.Int32)">
+            <summary>
+            Get user by id.
+            </summary>
+            <param name="id">Id of user.</param>
+            <returns>User that have this id.</returns>
+        </member>
+        <member name="M:Services.UserService.GetUserByLogin(System.String)">
+            <summary>
+            Get user by login.
+            </summary>
+            <param name="login">Login of important user.</param>
+            <returns>User with the same login.</returns>
+        </member>
+        <member name="M:Services.UserService.CheckUserByEmail(System.String)">
+            <summary>
+            Check if user with the same email is exist.
+            </summary>
+            <param name="email">String of user's email.</param>
+            <returns>Result if user with same email is exist.</returns>
+        </member>
+        <member name="M:Services.UserService.Login(System.String,System.String)">
+            <summary>
+            Check if user with this login <paramref name="login"/> and password <paramref name="password"/>.
+            </summary>
+            <param name="login">Login of user.</param>
+            <param name="password">Password for login</param>
+            <returns>If user with this login and password is exist.</returns>
+        </member>
+        <member name="M:Services.UserService.Unregister(System.Int32)">
+            <summary>
+            Unregister user by id.
+            </summary>
+            <param name="id">ID of the user.</param>
+        </member>
+        <member name="T:Services.IUserService">
+            <summary>
+            Service interface.
+            </summary>
+        </member>
+        <member name="M:Services.IUserService.Register(Services.Common.User)">
+            <summary>
+            Registration methods.
+            </summary>
+            <param name="user">User of type <see cref="T:Services.Common.User"/> for registration.</param>
+        </member>
+        <member name="M:Services.IUserService.Login(System.String,System.String)">
+            <summary>
+            Logging method.
+            </summary>
+            <param name="login">login of user.</param>
+            <param name="password">password of user.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Services.IUserService.GetUser(System.Int32)">
+            <summary>
+            Get user by id method.
+            </summary>
+            <param name="id">Id of user.</param>
+            <returns>User by id.</returns>
+        </member>
+        <member name="M:Services.IUserService.GetUserByLogin(System.String)">
+            <summary>
+            Get user by login.
+            </summary>
+            <param name="login">login of user.</param>
+            <returns>user by login.</returns>
+        </member>
+        <member name="M:Services.IUserService.Unregister(System.Int32)">
+            <summary>
+            Method of unregistration user by id.
+            </summary>
+            <param name="id">id of the remote user.</param>
+        </member>
+    </members>
+</doc>

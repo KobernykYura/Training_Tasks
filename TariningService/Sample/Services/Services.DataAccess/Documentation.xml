@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Services.DataAccess</name>
+    </assembly>
+    <members>
+        <member name="T:Services.IUserCheck">
+            <summary>
+            CUID validation interface.
+            </summary>
+        </member>
+        <member name="M:Services.IUserCheck.LoginUser(System.String,System.String)">
+            <summary>
+            Method of login user validation result.
+            </summary>
+            <param name="login">Login of user.</param>
+            <param name="password">Password of user.</param>
+            <returns>Bool result of users authentication.</returns>
+        </member>
+        <member name="M:Services.IUserCheck.CheckUserByEmail(System.String)">
+            <summary>
+            Verify user existence method.
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Services.DataAccess.IUserRepository">
+            <summary>
+            СUID interface.
+            </summary>
+        </member>
+    </members>
+</doc>

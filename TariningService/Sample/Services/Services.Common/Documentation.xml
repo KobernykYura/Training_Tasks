@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Services.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Services.Common.User">
+            <summary>
+            Class of service user.
+            </summary>
+        </member>
+    </members>
+</doc>

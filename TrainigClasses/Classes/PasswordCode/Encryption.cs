@@ -7,10 +7,7 @@ namespace EncriptionCode
     /// </summary>
     public static class Encryption
     {
-        private static class Neasted
-        {
 
-        }
         /// <summary>
         /// Encode line in new format.
         /// </summary>
