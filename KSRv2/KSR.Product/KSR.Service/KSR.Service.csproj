@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE408B8B-B977-43A3-B09E-94FADBF23F1E}</ProjectGuid>
+    <ProjectGuid>{5811D645-F30F-499B-B298-956551796828}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KSR.Service</RootNamespace>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -42,18 +45,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IService.cs" />
-    <Compile Include="BasketService.cs" />
+    <Compile Include="IBuyer.cs" />
+    <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KSR.Common\KSR.Common.csproj">
-      <Project>{a7c712e8-062e-4e8e-9063-ada2820648f9}</Project>
-      <Name>KSR.Common</Name>
+    <ProjectReference Include="..\KSR.DataSourse\KSR.DataSourse.csproj">
+      <Project>{e8039807-88cd-49be-9ba6-01f2356ea81a}</Project>
+      <Name>KSR.DataSourse</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KSR.DataSource\KSR.DataSource.csproj">
-      <Project>{3110F141-2E9F-41CC-9EE3-712835D2BE3C}</Project>
-      <Name>KSR.DataSource</Name>
+    <ProjectReference Include="..\KSR.Exceptions\KSR.Exceptions.csproj">
+      <Project>{AEDD1FB6-91F1-43AA-A804-51BF29F3451C}</Project>
+      <Name>KSR.Exceptions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KSR.Product\KSR.Product.csproj">
+      <Project>{2E1D6CA2-D492-429E-80FA-928CCC0AD0BA}</Project>
+      <Name>KSR.Product</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,18 +4,23 @@ using System.Collections.Generic;
 
 namespace KSR.DataSource
 {
-    public class Repository : IRepository
+    public class BasketRepository : IRepository
     {
-        // список покупок
-        private readonly List<IProduct> list;
+        /// <summary>
+        /// List of products for purchase
+        /// </summary>
+        private readonly List<AbstractProduct> list;
 
-        public Repository()
+        /// <summary>
+        /// Creation of Products list.
+        /// </summary>
+        public BasketRepository()
         {
-            this.list = new List<IProduct>();
+            this.list = new List<AbstractProduct>();
         }
 
         // просмотр продукта по id
-        public IProduct GetProduct(int id)
+        public AbstractProduct GetProduct(int id)
         {
             try
             {
@@ -28,8 +33,12 @@ namespace KSR.DataSource
             }
         }
 
-        // просмотр продукта по имени
-        public IProduct GetProductByName(string name)
+        /// <summary>
+        /// Get product by name.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public AbstractProduct GetProductByName(string name)
         {
             try
             {
@@ -43,33 +52,36 @@ namespace KSR.DataSource
 
         }
 
-        // покупка
-        public uint Buy() 
+        /// <summary>
+        /// Buy list of products.
+        /// </summary>
+        /// <returns>Returns the sum of purchases</returns>
+        public uint GetPrice() 
         {
-            uint cast = 0;
+            uint amount = 0;
 
             for (int i = 0; i < list.Count; i++)
             {
-                cast += list[i].Value;
+                amount += list[i].Price;
             }
 
-            return cast;
+            return amount;
         }
 
         // получить список купленного
-        public IEnumerable<IProduct> GetList(IProduct product)
+        public IEnumerable<AbstractProduct> GetShopList(AbstractProduct product)
         {
             return list;
         }
 
         // добавить покупку
-        public void Register(IProduct product)
+        public void Add(AbstractProduct product)
         {
             list.Add(product);
         }
 
         //убрать покупку
-        public void Unregister(int id)
+        public void Remove(int id)
         {
             try
             {

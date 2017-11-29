@@ -5,16 +5,16 @@ namespace KSR.DataSource
 {
     public interface IRepository
     {
-        void Register(IProduct product);
+        void Add(AbstractProduct product);
 
-        IProduct GetProduct(int id);
+        AbstractProduct GetProduct(int id);
 
-        IProduct GetProductByName(string name);
+        AbstractProduct GetProductByName(string name);
 
-        uint Buy();
+        uint GetPrice();
 
-        IEnumerable<IProduct> GetList(IProduct product);
+        IEnumerable<AbstractProduct> GetShopList(AbstractProduct product);
 
-        void Unregister(int id);
+        void Remove(int id);
     }
 }

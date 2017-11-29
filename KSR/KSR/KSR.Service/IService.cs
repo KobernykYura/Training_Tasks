@@ -1,14 +1,19 @@
 ﻿using KSR.Common;
+using System.Collections.Generic;
 
 namespace KSR.Service
 {
     public interface IService
     {
-        void Register(IProduct product);
+        void Register(AbstractProduct product);
 
-        IProduct GetProduct(int id);
+        AbstractProduct GetProduct(int id);
 
-        IProduct GetProductByName(string name);
+        AbstractProduct GetProductByName(string name);
+
+        uint Buy();
+
+        IEnumerable<AbstractProduct> GetList(AbstractProduct product);
 
         void Unregister(int id);
     }

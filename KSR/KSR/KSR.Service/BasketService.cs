@@ -10,33 +10,52 @@ using KSR.Common.Exceptions;
 
 namespace KSR.Service
 {
-    public class Service : IService
+    public class BasketService : IService
     {
         private readonly IRepository _repository;
 
-        public Service(IRepository repository)
+        /// <summary>
+        /// Repository constructor.
+        /// </summary>
+        /// <param name="repository"></param>
+        public BasketService(IRepository repository)
         {
-            this._repository = repository; // репозиторий для работы с продуктами.
+            // репозиторий для работы с продуктами.
+            this._repository = repository; 
         }
 
-        public IProduct GetProduct(int id)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public AbstractProduct GetProduct(int id)
         {
-           IProduct product = DoGetProductId(id); // проверка исключений
+           AbstractProduct product = DoGetProductId(id); // проверка исключений
             if (product != null)
                 return product;
             else throw new ArgumentNullException($"No product {product} in database");
         }
 
-        public IProduct GetProductByName(string name)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public AbstractProduct GetProductByName(string name)
         {
             if (string.IsNullOrEmpty(name))
                 throw new ArgumentNullException(nameof(name));
 
-            IProduct product = DoGetProductName(name); // проверка исключний
+            AbstractProduct product = DoGetProductName(name); // проверка исключний
             return product;
         }
 
-        public void Register(IProduct product)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
+        public void Register(AbstractProduct product)
         {
             //validation
             if (product == null)
@@ -51,12 +70,35 @@ namespace KSR.Service
             DoRegistr(product);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
         public void Unregister(int id)
         {
-            IProduct prod = _repository.GetProduct(id);
+            AbstractProduct prod = DoGetProductId(id);
             if (prod != null)
                 DoUnregistr(id);
             else throw new IDException("Incorrect input of ID.");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public uint Buy()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns></returns>
+        public IEnumerable<AbstractProduct> GetList(AbstractProduct product)
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -65,11 +107,11 @@ namespace KSR.Service
         /// регистрация проверенного товара
         /// </summary>
         /// <param name="product"></param>
-        private void DoRegistr(IProduct product)
+        private void DoRegistr(AbstractProduct product)
         {
             try
             {
-                _repository.Register(product);
+                _repository.Add(product);
             }
             catch (ConnectionException e)
             {
@@ -85,7 +127,7 @@ namespace KSR.Service
         {
             try
             {
-                _repository.Unregister(id);
+                _repository.Remove(id);
             }
             catch (ConnectionException e)
             {
@@ -93,13 +135,12 @@ namespace KSR.Service
             }
         }
 
-
         /// <summary>
         /// метод получения продукта из репозитория
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        private IProduct DoGetProductName(string name)
+        private AbstractProduct DoGetProductName(string name)
         {
             try
             {
@@ -111,8 +152,12 @@ namespace KSR.Service
             }
         }
 
-
-        private IProduct DoGetProductId(int id)
+        /// <summary>
+        /// Method of checking product with ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        private AbstractProduct DoGetProductId(int id)
         {
             try
             {
