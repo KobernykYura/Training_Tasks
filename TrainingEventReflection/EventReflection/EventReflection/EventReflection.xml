@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EventReflection</name>
+    </assembly>
+    <members>
+        <member name="M:EventReflection.CreateReflector.Create``1">
+            <summary>
+            Create instance of class type object and get his event.
+            </summary>
+            <typeparam name="EType">Type of class to create.</typeparam>
+            <returns></returns>
+            <exception cref="T:System.MemberAccessException">"MemberAccessException for type <typeparamref name="EType"/>.</exception>
+            <exception cref="T:System.NotSupportedException">Not supported for this type to call constructor.</exception>
+            <exception cref="T:System.MissingMethodException">No standart constructor for type <typeparamref name="EType"/>.</exception>
+        </member>
+        <member name="T:EventReflection.StaticReflector">
+            <summary>
+            Static class for comfortable method call.
+            </summary>
+        </member>
+        <member name="M:EventReflection.StaticReflector.GetEvent``1(System.Object,System.String)">
+            <summary>
+            Extention method for getting event form object by name.
+            </summary>
+            <typeparam name="EType">Type of parameter <paramref name="obj"/>. Must be a class type.</typeparam>
+            <param name="obj">The parameter of the object that the method uses.</param>
+            <param name="name">The name of the event from object.</param>
+            <returns><see cref="T:System.Reflection.EventInfo"/> type of event to get from object <paramref name="obj"/>.</returns>
+            <exception cref="T:System.ArgumentNullException">Check your arguments..</exception>
+        </member>
+        <member name="M:EventReflection.StaticReflector.GetProperty``1(System.Object,System.String)">
+            <summary>
+            Extntion method for getting property from object by name.
+            </summary>
+            <typeparam name="EType">Type of parameter <paramref name="obj"/>. Must be a class type.</typeparam>
+            <param name="obj">The parameter of the object that the method uses.</param>
+            <param name="name">The name of the property to get from object.</param>
+            <returns><see cref="T:System.Reflection.ParameterInfo"/> type of property from object <paramref name="obj"/>.</returns>
+            <exception cref="T:System.NullReferenceException">No Instance of object typeof(<typeparamref name="EType"/>).</exception>
+            <exception cref="T:System.Reflection.AmbiguousMatchException">The linkage criterion corresponds to several members.</exception>
+            <exception cref="T:System.ArgumentNullException">Check your arguments.</exception>
+        </member>
+        <member name="M:EventReflection.StaticReflector.AddToEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            Adds methods as delegate to event of object with reflection.
+            </summary>
+            <param name="obj">Target object.</param>
+            <param name="even">Event of target object.</param>
+            <param name="func">Encapsulates method or mrthods to invoke by event. </param> 
+            <exception cref="T:System.NullReferenceException">The argument of object can't be null.</exception>
+            <exception cref="T:System.NotImplementedException">Event <paramref name="even"/> is not implemented in <paramref name="obj"/>.</exception>
+            <exception cref="T:System.ArgumentException">The passed handler can not be used. Check your arguments.</exception>
+            <exception cref="T:System.MethodAccessException">The calling object does not have permission to access this element.</exception>
+            <exception cref="T:System.InvalidOperationException">This event does not support the public access method add.</exception>
+        </member>
+        <member name="M:EventReflection.StaticReflector.SetNewValue(System.Reflection.PropertyInfo,System.Object,System.Decimal)">
+            <summary>
+            Method for setting value at property with reflection.
+            </summary>
+            <param name="obj">Target object.</param>
+            <param name="prop"></param>
+            <param name="num">Value of <see cref="T:System.Decimal"/> type.</param>
+            <exception cref="T:System.Reflection.TargetInvocationException">Problem with setting value to property. More info into innerException.</exception>
+            <exception cref="T:System.Reflection.TargetException">Check setted delegate methods. More info into innerException.</exception>
+            <exception cref="T:System.ArgumentException">Check your arguments. More info into innerException.</exception>
+            <exception cref="T:System.NullReferenceException">No reference to propery. Property is null.</exception>
+        </member>
+    </members>
+</doc>

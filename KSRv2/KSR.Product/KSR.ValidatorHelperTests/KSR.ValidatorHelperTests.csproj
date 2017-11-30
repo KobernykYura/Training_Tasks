@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{461B1A8B-2D5E-4301-87B7-E728C6A2F54E}</ProjectGuid>
+    <ProjectGuid>{EEF31A4B-17A0-495F-A105-28E8D3EC2768}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KSR.DataSourceTests</RootNamespace>
-    <AssemblyName>KSR.DataSourceTests</AssemblyName>
+    <RootNamespace>KSR.ValidatorHelperTests</RootNamespace>
+    <AssemblyName>KSR.ValidatorHelperTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -46,6 +46,7 @@
       <HintPath>..\packages\MSTest.TestFramework.1.1.18\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -56,20 +57,20 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="BasketRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationHelperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KSR.DataSourse\KSR.DataSourse.csproj">
-      <Project>{E8039807-88CD-49BE-9BA6-01F2356EA81A}</Project>
-      <Name>KSR.DataSourse</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KSR.Product\KSR.Product.csproj">
-      <Project>{2E1D6CA2-D492-429E-80FA-928CCC0AD0BA}</Project>
+      <Project>{2e1d6ca2-d492-429e-80fa-928ccc0ad0ba}</Project>
       <Name>KSR.Product</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSR.Validator\KSR.ValidatorHelper.csproj">
+      <Project>{ED13752F-2177-44C0-859F-76C8BAD27D5B}</Project>
+      <Name>KSR.ValidatorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

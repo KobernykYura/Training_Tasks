@@ -12,15 +12,60 @@ namespace Validator.Tests
     public class ValidationHelperTests
     {
         [TestMethod()]
-        public void NullObjectTest()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void NullObjectTest_NullObjectThrowArgumentNullException()
         {
-            Assert.Fail();
+            object obj = null;
+            string message = "Problem";
+
+            ValidationHelper.NullObject(obj, message);
         }
 
         [TestMethod()]
-        public void NotNullObjectTest()
+        public void NullObjectTest_NotNullObjectDontThrowArgumentNullException()
         {
-            Assert.Fail();
+            object obj = new object();
+            string message = "Problem";
+
+            ValidationHelper.NullObject(obj, message);
+        }
+
+        [TestMethod()]
+        public void NullObjectTest_NotNullRandomObjectDontThrowArgumentNullException()
+        {
+            var obj = new Random();
+            string message = "Problem";
+
+            ValidationHelper.NullObject(obj, message);
+        }
+
+        [TestMethod()]
+        public void NotNullObjectTest_NullObjectDontThrowArgumentNullException()
+        {
+            object obj = null;
+            string message = "Problem";
+
+            ValidationHelper.NotNullObject(obj, message);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void NotNullObjectTest_NotNullObjectThrowArgumentNullException()
+        {
+            object obj = new object();
+            string message = "Problem";
+
+            ValidationHelper.NotNullObject(obj, message);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void NotNullObjectTest_NotNullStackObjectThrowArgumentNullException()
+        {
+            var obj = new Stack<string>();
+            string message = "Problem";
+
+            ValidationHelper.NotNullObject(obj, message);
         }
 
         [TestMethod()]

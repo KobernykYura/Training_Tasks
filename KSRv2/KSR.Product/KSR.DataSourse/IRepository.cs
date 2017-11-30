@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace KSR.DataSourse
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> where T : AbstractProduct
     {
+        bool Update(T product);
         void Register(T product);
-
-        T GetProduct(int id);
-
-        T GetProductByName(string name);
-
-        IEnumerable<T> GetShopList();
-
         void Unregister(int id);
 
-        double GetBuyAll();
+        T GetProduct(int id);
+        T GetProductByName(string name);
+        IEnumerable<T> GetShopList();
+
         double GetBuy(T product);
         double GetBuy(IEnumerable<T> products);
     }

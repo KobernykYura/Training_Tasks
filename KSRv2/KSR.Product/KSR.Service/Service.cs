@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KSR.Product;
 using KSR.Exceptions;
+using KSR.ValidatorHelper;
 using System.ComponentModel.DataAnnotations;
 using KSR.DataSourse;
 
@@ -32,7 +33,7 @@ namespace KSR.Service
         /// <param name="product">Product for registration.</param>
         public void Register(AbstractProduct product)
         {
-            ValidationMethod(product);
+            ValidationHelper.ProductValidation(product);
 
             DoRegistr(product);
         }
@@ -44,9 +45,10 @@ namespace KSR.Service
         public AbstractProduct GetProduct(int id)
         {
             AbstractProduct product = DoGetProductId(id); // проверка исключений
-            if (product != null)
-                return product;
-            else throw new ArgumentNullException($"No product {product} in database");
+            
+            ValidationHelper.NullObject(product, $"No product {product} in database");
+
+            return product;
         }
         /// <summary>
         /// Get product by name.
@@ -55,8 +57,7 @@ namespace KSR.Service
         /// <returns>Product with the same name.</returns>
         public AbstractProduct GetProductByName(string name)
         {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException(nameof(name));
+            ValidationHelper.NullString(name);
 
             AbstractProduct product = DoGetProductName(name); // проверка исключний
             return product;
@@ -68,13 +69,11 @@ namespace KSR.Service
         public void Unregister(int id)
         {
             AbstractProduct prod = DoGetProductId(id);
-            if (prod != null)
-                DoUnregistr(id);
-            else throw new IDException("Incorrect input of ID.");
+
+            ValidationHelper.NullObject(prod, new IDException("Incorrect input of ID."));
+
+            DoUnregistr(id);
         }
-
-
- 
         /// <summary>
         /// Method of purchase of product.
         /// </summary>
@@ -82,8 +81,8 @@ namespace KSR.Service
         /// <returns>Returns the purchase price.</returns>
         public double Buy(AbstractProduct product)
         {
-            ValidationMethod(product);
-
+            ValidationHelper.ProductValidation(product);
+            
             return DoBuy(product);
         }
         /// <summary>
@@ -93,9 +92,9 @@ namespace KSR.Service
         /// <returns>Returns the purchase price.</returns>
         public double Buy(IEnumerable<AbstractProduct> products)
         {
-            foreach (var item in products)
+            foreach (var product in products)
             {
-                ValidationMethod(item);
+                ValidationHelper.ProductValidation(product);
             }
 
             return DoBuy(products);
@@ -116,6 +115,9 @@ namespace KSR.Service
                 throw new ConnectionException("Problems with connectiont to data source.", e);
             }
         }
+        
+
+
         /// <summary>
         /// Purchase the selected product.
         /// </summary>
@@ -125,7 +127,10 @@ namespace KSR.Service
         {
             try
             {
-                return _repository.GetBuy(product);
+                var price = _repository.GetBuy(product);
+                this.WasBought?.Invoke(this, new ProductEventArgs(product.Name, price));
+
+                return price;
             }
             catch (ConnectionException e)
             {
@@ -147,7 +152,12 @@ namespace KSR.Service
         {
             try
             {
-                return _repository.GetBuy(products);
+                var price = _repository.GetBuy(products);
+                var count = products.Count();
+
+                this.WasBought?.Invoke(this, new ProductEventArgs(count, price));
+
+                return price;
             }
             catch (ConnectionException e)
             {
@@ -155,9 +165,6 @@ namespace KSR.Service
                 throw new ConnectionException("Problems with connectiont to data source.", e); 
             }
         }
-
-        
-
         /// <summary>
         /// Registration of the checked product.
         /// </summary>
@@ -226,26 +233,8 @@ namespace KSR.Service
         }
 
         /// <summary>
-        /// Product verification method.
+        /// EventHandler with <see cref="ProductEventArgs"/>. To inform a buyer about the completion of the purchase.
         /// </summary>
-        /// <param name="product">Product under test.</param>
-        private static void ValidationMethod(AbstractProduct product)
-        {
-            //validation
-            var results = new List<ValidationResult>();
-            var context = new ValidationContext(product);
-            if (!Validator.TryValidateObject(product, context, results, true))
-            {
-                string exceptionMessage = $"Product {product} validation exception:\n ";
-                int i = 1;
-
-                foreach (var error in results)
-                {
-                    exceptionMessage = string.Concat(exceptionMessage, $"{i++}) {error.ErrorMessage}\n");
-                }
-                throw new ValidationException(exceptionMessage);
-            }
-        }
-
+        public event EventHandler<ProductEventArgs> WasBought;
     }
 }

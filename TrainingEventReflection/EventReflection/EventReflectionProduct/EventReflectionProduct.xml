@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EventReflectionProduct</name>
+    </assembly>
+    <members>
+        <member name="F:EventReflection.Products.Product._price">
+            <summary>
+            Price fild.
+            </summary>
+        </member>
+        <member name="P:EventReflection.Products.Product.Name">
+            <summary>
+            Name property.
+            </summary>
+        </member>
+        <member name="P:EventReflection.Products.Product.Price">
+            <summary>
+            Price property with invocation of event.
+            </summary>
+        </member>
+        <member name="M:EventReflection.Products.Product.ProductList">
+            <summary>
+            Get-fixed products list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:EventReflection.Products.Product.PriceChanged">
+            <summary>
+            Event of changed price.
+            </summary>
+        </member>
+        <member name="M:EventReflection.Products.Product.OnPriceChanged(EventReflection.Products.PriceChangedEventArgs)">
+            <summary>
+            Invocation of changed price event.
+            </summary>
+        </member>
+    </members>
+</doc>

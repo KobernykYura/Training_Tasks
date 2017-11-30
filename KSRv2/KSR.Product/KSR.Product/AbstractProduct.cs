@@ -11,37 +11,37 @@ namespace KSR.Product
 {
     public abstract class AbstractProduct : IValidatableObject, IEquatable<AbstractProduct>
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
 
         /// <summary>
         /// Name of product. 
         /// </summary>
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
 
         /// <summary>
         /// Price for product.
         /// </summary>
-        public double Price { get; private set; }
+        public double Price { get; protected set; }
 
         /// <summary>
-        /// Value of product.
+        /// Value of product. Размер массы/объема
         /// </summary>
-        public double Value { get; private set; }
+        public double Value { get; protected set; }
 
         /// <summary>
         /// Measure of product.
         /// </summary>
-        public Type Measure { get; private set; }
+        public Type Measure { get; protected set; }
 
         /// <summary>
         /// Date of product creation.
         /// </summary>
-        public DateTime CreationDate { get; private set; }
+        public DateTime CreationDate { get; protected set; }
 
         /// <summary>
         /// Date of product life time ends.
         /// </summary>
-        public DateTime ExpiryDate { get; private set; }
+        public DateTime ExpiryDate { get; protected set; }
 
         public AbstractProduct()
         {

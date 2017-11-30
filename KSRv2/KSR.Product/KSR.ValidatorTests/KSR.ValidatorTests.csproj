@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KSR.Validator\KSR.Validator.csproj">
+    <ProjectReference Include="..\KSR.Validator\KSR.ValidatorHelper.csproj">
       <Project>{ED13752F-2177-44C0-859F-76C8BAD27D5B}</Project>
-      <Name>KSR.Validator</Name>
+      <Name>KSR.ValidatorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

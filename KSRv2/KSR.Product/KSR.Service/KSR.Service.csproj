@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -44,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductEventArgs.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IBuyer.cs" />
     <Compile Include="Service.cs" />
@@ -61,6 +59,10 @@
     <ProjectReference Include="..\KSR.Product\KSR.Product.csproj">
       <Project>{2E1D6CA2-D492-429E-80FA-928CCC0AD0BA}</Project>
       <Name>KSR.Product</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KSR.Validator\KSR.ValidatorHelper.csproj">
+      <Project>{ed13752f-2177-44c0-859f-76c8bad27d5b}</Project>
+      <Name>KSR.ValidatorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
