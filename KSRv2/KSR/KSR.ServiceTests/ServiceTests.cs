@@ -136,19 +136,6 @@ namespace KSR.Service.Tests
 
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void GetProductTest_ConnectionFailCallConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.GetProduct(It.IsAny<int>()))
-                .Throws<ConnectionException>();
-
-            var service = new Service(_repositoryMoq.Object);
-            var result = service.GetProduct(_good.ID);
-
-        }
-
 
         // ------------------GetProductByNameTest()
 
@@ -174,18 +161,6 @@ namespace KSR.Service.Tests
             Assert.AreEqual(_good, result);
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void GetProductByNameTest_ConnectionFailCallConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.GetProductByName(It.IsAny<string>()))
-                .Throws<ConnectionException>();
-
-            var service = new Service(_repositoryMoq.Object);
-            var result = service.GetProductByName(_good.Name);
-        }
-
 
         // -------------------UnregisterTest()
 
@@ -208,18 +183,6 @@ namespace KSR.Service.Tests
             //---- setup exception call from repository.
             _repositoryMoq.Setup(r => r.GetProduct(It.IsAny<int>()))
                 .Returns((AbstractGood)null);
-
-            var service = new Service(_repositoryMoq.Object);
-            service.Unregister(_good.ID);
-        }
-
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void UnregisterTest_ConnectionFailCallConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.GetProduct(It.IsAny<int>()))
-                .Throws<ConnectionException>();
 
             var service = new Service(_repositoryMoq.Object);
             service.Unregister(_good.ID);
@@ -256,18 +219,6 @@ namespace KSR.Service.Tests
             var res = service.Purchase((AbstractGood)null);
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void MakePurchaseTest_BadObjectThrowConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.MakePurchase(It.IsAny<AbstractGood>()))
-                .Throws<ConnectionException>();
-
-            var service = new Service(_repositoryMoq.Object);
-            var res = service.Purchase(_good);
-        }
-
 
         // -------------------BuyTest(IEnumerable)
 
@@ -299,26 +250,6 @@ namespace KSR.Service.Tests
 
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void MakePurchaseTest_BadEmptyListThrowConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.MakePurchases(It.IsAny<IEnumerable<AbstractGood>>()))
-                .Throws<ConnectionException>();
-
-            var list = new List<AbstractGood>
-            {
-                new Clothes("T-Shirt", 2, 100),
-                new Clothes("Shoes", 6, 60),
-                new Clothes("Shirt", 2, 1)
-            };
-
-            var service = new Service(_repositoryMoq.Object);
-            var res = service.Purchase(list);
-
-        }
-
 
         // -------------------GetListTest()
 
@@ -332,18 +263,6 @@ namespace KSR.Service.Tests
 
             _repositoryMoq
                 .Verify(r => r.GetShopList(), () => Times.AtLeastOnce()); //---- as Moq test
-        }
-
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void GetListTest_ThrowConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.GetShopList())
-                .Throws<ConnectionException>();
-
-            var service = new Service(_repositoryMoq.Object);
-            var res = service.GetList();
         }
 
 
@@ -394,20 +313,6 @@ namespace KSR.Service.Tests
             var service = new Service(_repositoryMoq.Object);
             service.Update(new MealProduct("", 45, -4));
         }
-
-        [TestMethod()]
-        [ExpectedException(typeof(ConnectionException))]
-        public void UpdateTest_ThrowConnectionException()
-        {
-            //---- setup exception call from repository.
-            _repositoryMoq.Setup(r => r.Update(It.IsAny<AbstractGood>()))
-                    .Throws<ConnectionException>();
-
-            var service = new Service(_repositoryMoq.Object);
-            service.Update(_good);
-        }
-
-
 
     }
 }

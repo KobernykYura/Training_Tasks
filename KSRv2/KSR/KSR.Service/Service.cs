@@ -40,7 +40,8 @@ namespace KSR.Service
             ValidationHelper.NullObject(product);
             ValidationHelper.ProductValidation(product);
 
-            DoRegistr(product);
+            _repository.Register(product);
+
         }
         /// <summary>
         /// Get product by id.
@@ -49,8 +50,8 @@ namespace KSR.Service
         /// <returns>Product that have this id.</returns>
         public AbstractGood GetProduct(int id)
         {
-            AbstractGood product = DoGetProductId(id); // проверка исключений
-            
+            AbstractGood product = _repository.GetProduct(id);
+
             ValidationHelper.NullObject(product, $"No product {product} in database");
 
             return product;
@@ -64,8 +65,7 @@ namespace KSR.Service
         {
             ValidationHelper.NullString(name);
 
-            AbstractGood product = DoGetProductName(name); // проверка исключний
-            return product;
+            return _repository.GetProductByName(name);
         }
         /// <summary>
         /// Remove product from shop by id.
@@ -73,11 +73,12 @@ namespace KSR.Service
         /// <param name="id">ID of the product.</param>
         public void Unregister(int id)
         {
-            AbstractGood prod = DoGetProductId(id);
+            AbstractGood prod =  _repository.GetProduct(id);
 
             ValidationHelper.NullObject(prod, new IDException("Incorrect input of ID."));
 
-            DoUnregistr(id);
+            _repository.Unregister(id);
+
         }
 
         /// <summary>
@@ -85,11 +86,12 @@ namespace KSR.Service
         /// </summary>
         /// <param name="product">Updated product.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public void Update(AbstractGood product)
+        public bool Update(AbstractGood product)
         {
             ValidationHelper.NullObject(product);
             ValidationHelper.ProductValidation(product);
-            DoUpdate(product);
+
+            return _repository.Update(product);
         }
 
 
@@ -102,8 +104,13 @@ namespace KSR.Service
         {
             ValidationHelper.NullObject(product);
             ValidationHelper.ProductValidation(product);
-            
-            return DoBuy(product);
+
+            var price = _repository.MakePurchase(product);
+            var args = new PurchaseEventArgs(product.Name, price);
+
+            this.WasBought?.Invoke(this, args);
+
+            return price;
         }
         /// <summary>
         /// Method of purchasing several products.
@@ -117,7 +124,13 @@ namespace KSR.Service
                 ValidationHelper.ProductValidation(product);
             }
 
-            return DoBuy(products);
+            var price = _repository.MakePurchases(products);
+            var count = products.Count();
+            var args = new PurchaseEventArgs(count, price);
+
+            this.WasBought?.Invoke(this, args);
+
+            return price;
         }
         /// <summary>
         /// Get a list of purchased products.
@@ -125,147 +138,9 @@ namespace KSR.Service
         /// <returns>Returns the purchase price.</returns>
         public IEnumerable<AbstractGood> GetList()
         {
-            try
-            {
-                return _repository.GetShopList();
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
+            return _repository.GetShopList();
         }
-        
-
-
-        /// <summary>
-        /// Purchase the selected product.
-        /// </summary>
-        /// <param name="product">Selected product.</param>
-        /// <returns>Returns the purchase price.</returns>
-        private decimal DoBuy(AbstractGood product)
-        {
-            try
-            {
-                var price = _repository.MakePurchase(product);
-                this.WasBought?.Invoke(this, new PurchaseEventArgs(product.Name, price));
-
-                return price;
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-            
-        }
-        /// <summary>
-        /// Purchase the selected products.
-        /// </summary>
-        /// <param name="products">Selected products.</param>
-        /// <returns>Returns the purchase price.</returns>
-        private decimal DoBuy(IEnumerable<AbstractGood> products)
-        {
-            try
-            {
-                var price = _repository.MakePurchases(products);
-                var count = products.Count();
-
-                this.WasBought?.Invoke(this, new PurchaseEventArgs(count, price));
-
-                return price;
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e); 
-            }
-        }
-        /// <summary>
-        /// Registration of the checked product.
-        /// </summary>
-        /// <param name="product">The resulting product.</param>
-        private void DoRegistr(AbstractGood product)
-        {
-            try
-            {
-                _repository.Register(product);
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-        }
-        /// <summary>
-        /// Deregistration of products.
-        /// </summary>
-        /// <param name="id">The resulting product id.</param>
-        private void DoUnregistr(int id)
-        {
-            try
-            {
-                _repository.Unregister(id);
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-        }
-        /// <summary>
-        /// Method of getting the product
-        /// </summary>
-        /// <param name="name">Name of the product.</param>
-        /// <returns>The resulting product</returns>
-        private AbstractGood DoGetProductName(string name)
-        {
-            try
-            {
-                return _repository.GetProductByName(name);
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-        }
-        /// <summary>
-        /// Method of checking product with ID.
-        /// </summary>
-        /// <param name="id">Id of the product.</param>
-        /// <returns>The resulting product.</returns>
-        private AbstractGood DoGetProductId(int id)
-        {
-            try
-            {
-                return _repository.GetProduct(id);
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-        }
-
-        /// <summary>
-        /// Method of checking product with ID.
-        /// </summary>
-        /// <param name="product">Id of the product.</param>
-        /// <returns>The resulting product.</returns>
-        private bool DoUpdate(AbstractGood product)
-        {
-            try
-            {
-                return _repository.Update(product);
-            }
-            catch (SqlException e)
-            {
-                // запись в лог
-                throw new ConnectionException("Problems with connectiont to data source.", e);
-            }
-        }
-
+       
         /// <summary>
         /// EventHandler with <see cref="PurchaseEventArgs"/>. To inform a buyer about the completion of the purchase.
         /// </summary>

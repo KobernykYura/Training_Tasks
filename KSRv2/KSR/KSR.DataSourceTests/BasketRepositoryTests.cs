@@ -181,39 +181,50 @@ namespace KSR.DataSourse.Tests
         [TestMethod()]
         public void RemoveTest_GoodID()
         {
-            int id = int.MinValue + 2;
+            int id = int.MinValue + 1;
 
             var count1 = _repository.GetShopList().Count();
+            var obj = _repository.GetProduct(id);
 
-            _repository.Unregister(id);
+            _repository.Unregister(obj.ID);
 
             var count2 = _repository.GetShopList().Count();
 
             Assert.AreNotEqual(count1, count2);
+            foreach (var item in _repository.GetShopList())
+            {
+                Assert.AreNotEqual(obj, item);
+            }
         }
 
         [TestMethod()]
         public void RemoveTestGoodID2()
         {
-            int id = int.MinValue + 1;
-            var count1 = _repository.GetShopList().Count();
+            int id = int.MinValue + 3;
 
-            _repository.Unregister(id);
+            var count1 = _repository.GetShopList().Count();
+            var obj = _repository.GetProduct(id);
+
+            _repository.Unregister(obj.ID);
 
             var count2 = _repository.GetShopList().Count();
 
             Assert.AreNotEqual(count1, count2);
+            foreach (var item in _repository.GetShopList())
+            {
+                Assert.AreNotEqual(obj, item);
+            }
         }
 
         [TestMethod()]
         public void RemoveTest_BadID()
         {
             int id = 40;
-            var count1 = _repository.GetShopList().Count();
+            var count1 = _repository.GetShopList();
 
             _repository.Unregister(id);
 
-            var count2 = _repository.GetShopList().Count();
+            var count2 = _repository.GetShopList();
 
             Assert.AreEqual(count1, count2);
         }
@@ -222,11 +233,11 @@ namespace KSR.DataSourse.Tests
         public void RemoveTest_BadID2()
         {
             int id = -23;
-            var count1 = _repository.GetShopList().Count();
+            var count1 = _repository.GetShopList();
 
             _repository.Unregister(id);
 
-            var count2 = _repository.GetShopList().Count();
+            var count2 = _repository.GetShopList();
 
             Assert.AreEqual(count1, count2);
         }

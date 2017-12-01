@@ -35,7 +35,7 @@ namespace KSR.Interfaces
         /// </summary>
         /// <param name="product">Product to update.</param>
         /// <returns>true/false</returns>
-        void Update(T product);
+        bool Update(T product);
         /// <summary>
         /// Unregister product method.
         /// </summary>

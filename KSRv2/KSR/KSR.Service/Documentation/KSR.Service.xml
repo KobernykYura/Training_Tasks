@@ -102,53 +102,6 @@
             </summary>
             <returns>Returns the purchase price.</returns>
         </member>
-        <member name="M:KSR.Service.Service.DoBuy(KSR.Product.AbstractGood)">
-            <summary>
-            Purchase the selected product.
-            </summary>
-            <param name="product">Selected product.</param>
-            <returns>Returns the purchase price.</returns>
-        </member>
-        <member name="M:KSR.Service.Service.DoBuy(System.Collections.Generic.IEnumerable{KSR.Product.AbstractGood})">
-            <summary>
-            Purchase the selected products.
-            </summary>
-            <param name="products">Selected products.</param>
-            <returns>Returns the purchase price.</returns>
-        </member>
-        <member name="M:KSR.Service.Service.DoRegistr(KSR.Product.AbstractGood)">
-            <summary>
-            Registration of the checked product.
-            </summary>
-            <param name="product">The resulting product.</param>
-        </member>
-        <member name="M:KSR.Service.Service.DoUnregistr(System.Int32)">
-            <summary>
-            Deregistration of products.
-            </summary>
-            <param name="id">The resulting product id.</param>
-        </member>
-        <member name="M:KSR.Service.Service.DoGetProductName(System.String)">
-            <summary>
-            Method of getting the product
-            </summary>
-            <param name="name">Name of the product.</param>
-            <returns>The resulting product</returns>
-        </member>
-        <member name="M:KSR.Service.Service.DoGetProductId(System.Int32)">
-            <summary>
-            Method of checking product with ID.
-            </summary>
-            <param name="id">Id of the product.</param>
-            <returns>The resulting product.</returns>
-        </member>
-        <member name="M:KSR.Service.Service.DoUpdate(KSR.Product.AbstractGood)">
-            <summary>
-            Method of checking product with ID.
-            </summary>
-            <param name="product">Id of the product.</param>
-            <returns>The resulting product.</returns>
-        </member>
         <member name="E:KSR.Service.Service.WasBought">
             <summary>
             EventHandler with <see cref="T:KSR.Service.PurchaseEventArgs"/>. To inform a buyer about the completion of the purchase.
