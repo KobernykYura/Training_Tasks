@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.Exceptions</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.Exceptions.ConnectionException">
+            <summary>
+            Exception of connection.
+            </summary>
+        </member>
+        <member name="T:KSR.Exceptions.IDException">
+            <summary>
+            Исключительная ситуация для нсуществующего в репозитории ID.
+            </summary>
+        </member>
+    </members>
+</doc>

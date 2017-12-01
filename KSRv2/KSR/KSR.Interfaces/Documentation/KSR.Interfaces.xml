@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.Interfaces.IBuyer`1">
+            <summary>
+            Interface of buyer.
+            </summary>
+            <typeparam name="T">Type of <see cref="T:KSR.Product.AbstractGood"/></typeparam>
+        </member>
+        <member name="M:KSR.Interfaces.IBuyer`1.Purchase(`0)">
+            <summary>
+            Purchase one product.
+            </summary>
+            <param name="product"></param>
+            <returns>Price for this purchase.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IBuyer`1.Purchase(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Purchase many products.
+            </summary>
+            <param name="products"><see cref="T:System.Collections.Generic.IEnumerable`1"/> of products.</param>
+            <returns>Price for this purchase.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IBuyer`1.GetList">
+            <summary>
+            Get list of all goods in shop.
+            </summary>
+            <returns>List of available goods.</returns>
+        </member>
+        <member name="T:KSR.Interfaces.IRepository`1">
+            <summary>
+            Repository interface.
+            </summary>
+            <typeparam name="T">Generalized type.</typeparam>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.Update(`0)">
+            <summary>
+            Update product method.
+            </summary>
+            <param name="product">Product to update.</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.Register(`0)">
+            <summary>
+            Registration of new product.
+            </summary>
+            <param name="product">Product to register.</param>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.Unregister(System.Int32)">
+            <summary>
+            Unregister product method.
+            </summary>
+            <param name="id">Id of unregistering product.</param>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.GetProduct(System.Int32)">
+            <summary>
+            Method for getting product by ID.
+            </summary>
+            <param name="id">Id of product.</param>
+            <returns>Returns product.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.GetProductByName(System.String)">
+            <summary>
+            Method for getting product by name.
+            </summary>
+            <param name="name">Name of product.</param>
+            <returns>Returns product.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.GetShopList">
+            <summary>
+            Full list of avaliable goods.
+            </summary>
+            <returns>Returns list of all goods.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.MakePurchase(`0)">
+            <summary>
+            The method of buying one product.
+            </summary>
+            <param name="product">Purchased product.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IRepository`1.MakePurchases(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Method of buying several goods.
+            </summary>
+            <param name="products">Purchased products.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="T:KSR.Interfaces.IService`1">
+            <summary>
+            Service interface.
+            </summary>
+            <typeparam name="T">Generalized type.</typeparam>
+        </member>
+        <member name="M:KSR.Interfaces.IService`1.Register(`0)">
+            <summary>
+            Registration of new product.
+            </summary>
+            <param name="product">Product to register.</param>
+        </member>
+        <member name="M:KSR.Interfaces.IService`1.GetProduct(System.Int32)">
+            <summary>
+            Method for getting product by ID.
+            </summary>
+            <param name="id">Id of product.</param>
+            <returns>Returns product.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IService`1.GetProductByName(System.String)">
+            <summary>
+            Method for getting product by name.
+            </summary>
+            <param name="name">Name of product.</param>
+            <returns>Returns product.</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IService`1.Update(`0)">
+            <summary>
+            Update product method.
+            </summary>
+            <param name="product">Product to update.</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:KSR.Interfaces.IService`1.Unregister(System.Int32)">
+            <summary>
+            Unregister product method.
+            </summary>
+            <param name="id">Id of unregistering product.</param>
+        </member>
+    </members>
+</doc>

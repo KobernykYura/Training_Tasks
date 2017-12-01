@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.Product</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.Product.AbstractGood">
+            <summary>
+            Base class for products. 
+            It is important for us that the ID, Name, quantity, price, value, dimension, date of creation are in the class. 
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.ID">
+            <summary>
+            Product's ID.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.Name">
+            <summary>
+            Name of product. 
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.Amount">
+            <summary>
+            Amount of product.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.Price">
+            <summary>
+            Price for product.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.Value">
+            <summary>
+            Value of product. Размер массы/объема
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.DimensionType">
+            <summary>
+            Measure of product.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.AbstractGood.CreationDate">
+            <summary>
+            Date of product creation.
+            </summary>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.#ctor">
+            <summary>
+            Default value constructor .
+            </summary>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.#ctor(System.String,System.UInt32,System.Decimal)">
+            <summary>
+            Constructor for name, amount, price.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.#ctor(System.String,System.UInt32,System.Decimal,System.Type,System.Double)">
+            <summary>
+            Constructor for name, amount, price, measure, value.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="measure">Measure of product's value.</param>
+            <param name="value">Value of product.</param>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.#ctor(System.String,System.UInt32,System.Decimal,System.Type,System.Double,System.DateTime)">
+            <summary>
+            Constructor for name, amount, price, measure, value, release date.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="measure">Measure of product's value.</param>
+            <param name="value">Value of product.</param>
+            <param name="release">Date of creation.</param>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.ToString">
+            <summary>
+            Overrided ToString.
+            </summary>
+            <returns>String of object.</returns>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.Equals(System.Object)">
+            <summary>
+            Overrided Equals.
+            </summary>
+            <param name="obj"></param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.GetHashCode">
+            <summary>
+            Overrided HashCode.
+            </summary>
+            <returns>Returns the hash code for this instance.</returns>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.Equals(KSR.Product.AbstractGood)">
+            <summary>
+            Equals by ID.
+            </summary>
+            <param name="other">object to compare.</param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:KSR.Product.AbstractGood.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Method for model validation.
+            </summary>
+            <param name="validationContext">Validation context.</param>
+            <returns>List of errors.</returns>
+        </member>
+        <member name="T:KSR.Product.MealProduct">
+            <summary>
+            MealProduct class.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.MealProduct.ShelfLife">
+            <summary>
+            Date of product expiration.
+            </summary>
+        </member>
+        <member name="M:KSR.Product.MealProduct.#ctor">
+            <summary>
+            Default value constructor .
+            </summary>
+        </member>
+        <member name="M:KSR.Product.MealProduct.#ctor(System.String,System.UInt32,System.Decimal)">
+            <summary>
+            Constructor for name, amount, price.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+        </member>
+        <member name="M:KSR.Product.MealProduct.#ctor(System.String,System.UInt32,System.Decimal,System.Double,System.Type)">
+            <summary>
+            Constructor for name, amount, price, measure, value.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="measure">Measure of product's value.</param>
+            <param name="value">Value of product.</param>
+        </member>
+        <member name="M:KSR.Product.MealProduct.#ctor(System.String,System.UInt32,System.Decimal,System.Double,System.Type,System.DateTime)">
+            <summary>
+            Constructor for name, amount, price, measure, value, release date.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="measure">Measure of product's value.</param>
+            <param name="value">Value of product.</param>
+            <param name="release">Date of creation.</param>
+        </member>
+        <member name="M:KSR.Product.MealProduct.#ctor(System.String,System.UInt32,System.Decimal,System.Double,System.Type,System.DateTime,System.DateTime)">
+            <summary>
+            Constructor for name, amount, price, measure, value, release date.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="measure">Measure of product's value.</param>
+            <param name="value">Value of product.</param>
+            <param name="release">Date of creation.</param>
+            <param name="lifetime">Date of product lifetime end.</param>
+        </member>
+        <member name="T:KSR.Product.Clothes">
+            <summary>
+            Clothes class. Inherited from <see cref="T:KSR.Product.AbstractGood"/>.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.Clothes.Height">
+            <summary>
+            Hight of clothes.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.Clothes.Width">
+            <summary>
+            Width of clothes.
+            </summary>
+        </member>
+        <member name="P:KSR.Product.Clothes.Material">
+            <summary>
+            Matherial of clothes.
+            </summary>
+        </member>
+        <member name="M:KSR.Product.Clothes.#ctor">
+            <summary>
+            Default value constructor .
+            </summary>
+        </member>
+        <member name="M:KSR.Product.Clothes.#ctor(System.String,System.UInt32,System.Decimal)">
+            <summary>
+            Constructor for name, amount, price.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+        </member>
+        <member name="M:KSR.Product.Clothes.#ctor(System.String,System.UInt32,System.Decimal,System.UInt32,System.UInt32,System.Type)">
+            <summary>
+            Constructor for name, amount, price, measure, value.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="hight">Hight of this cloth.</param>
+            <param name="width">Width of this cloth.</param>
+            <param name="matherial">Material of this cloth.</param>
+        </member>
+        <member name="M:KSR.Product.Clothes.#ctor(System.String,System.UInt32,System.Decimal,System.UInt32,System.UInt32,System.Type,System.DateTime)">
+            <summary>
+            Constructor for name, amount, price, measure, value.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="amount">Amount of products.</param>
+            <param name="price">Price of one product</param>
+            <param name="hight">Hight of this cloth.</param>
+            <param name="width">Width of this cloth.</param>
+            <param name="matherial">Material of this cloth.</param>
+            <param name="release">Date of creation.</param>
+        </member>
+    </members>
+</doc>

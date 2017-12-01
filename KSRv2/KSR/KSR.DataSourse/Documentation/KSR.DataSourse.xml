@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.DataSourse</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.DataSourse.ShopRepository">
+            <summary>
+            Shop repository.
+            </summary>
+        </member>
+        <member name="F:KSR.DataSourse.ShopRepository.list">
+            <summary>
+            List of products for purchase
+            </summary>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.#ctor">
+            <summary>
+            Creation of Products list.
+            </summary>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.GetProduct(System.Int32)">
+            <summary>
+            Get product by id.
+            </summary>
+            <param name="id">Id of product.</param>
+            <returns>Returns the product by its id.</returns>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.GetProductByName(System.String)">
+            <summary>
+            Get product by name.
+            </summary>
+            <param name="name">Name of product.</param>
+            <returns>Returns the product by its name.</returns>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.GetShopList">
+            <summary>
+            Get a list of products.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.Update(KSR.Product.AbstractGood)">
+            <summary>
+            Update product in list.
+            </summary>
+            <param name="product">Updated product.</param>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.Register(KSR.Product.AbstractGood)">
+            <summary>
+            Add product to list.
+            </summary>
+            <param name="product">Product to register.</param>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.Unregister(System.Int32)">
+            <summary>
+            Unregister this product.
+            </summary>
+            <param name="id">Id of product.</param>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.MakePurchase(KSR.Product.AbstractGood)">
+            <summary>
+            Buy only one product.
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KSR.DataSourse.ShopRepository.MakePurchases(System.Collections.Generic.IEnumerable{KSR.Product.AbstractGood})">
+            <summary>
+            The method of buying a set of products.
+            </summary>
+            <param name="products">Purchased products.</param>
+            <returns>The price of purchased products.</returns>
+        </member>
+    </members>
+</doc>

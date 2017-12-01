@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.Service</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.Service.PurchaseEventArgs">
+            <summary>
+            Purchase EventArgs.
+            </summary>
+        </member>
+        <member name="P:KSR.Service.PurchaseEventArgs.Name">
+            <summary>
+            Name of product.
+            </summary>
+        </member>
+        <member name="P:KSR.Service.PurchaseEventArgs.Price">
+            <summary>
+            Price of purchace.
+            </summary>
+        </member>
+        <member name="P:KSR.Service.PurchaseEventArgs.Count">
+            <summary>
+            Number of products.
+            </summary>
+        </member>
+        <member name="M:KSR.Service.PurchaseEventArgs.#ctor(System.String,System.Decimal)">
+            <summary>
+            Set arguments of name and price for product.
+            </summary>
+            <param name="name">Name of product.</param>
+            <param name="price">Price of purchace.</param>
+        </member>
+        <member name="M:KSR.Service.PurchaseEventArgs.#ctor(System.Int32,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="count">Number of products.</param>
+            <param name="price">Price of purchace.</param>
+        </member>
+        <member name="T:KSR.Service.Service">
+            <summary>
+            Service class.
+            </summary>
+        </member>
+        <member name="M:KSR.Service.Service.#ctor(KSR.Interfaces.IRepository{KSR.Product.AbstractGood})">
+            <summary>
+            Constructor for setting products and basket repository.
+            </summary>
+            <param name="repository">Repository to connection.</param>
+        </member>
+        <member name="M:KSR.Service.Service.Register(KSR.Product.AbstractGood)">
+            <summary>
+            Registration of new product.
+            </summary>
+            <param name="product">Product for registration.</param>
+        </member>
+        <member name="M:KSR.Service.Service.GetProduct(System.Int32)">
+            <summary>
+            Get product by id.
+            </summary>
+            <param name="id">Id of product.</param>
+            <returns>Product that have this id.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.GetProductByName(System.String)">
+            <summary>
+            Get product by name.
+            </summary>
+            <param name="name">Product of important user.</param>
+            <returns>Product with the same name.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.Unregister(System.Int32)">
+            <summary>
+            Remove product from shop by id.
+            </summary>
+            <param name="id">ID of the product.</param>
+        </member>
+        <member name="M:KSR.Service.Service.Update(KSR.Product.AbstractGood)">
+            <summary>
+            Product update.
+            </summary>
+            <param name="product">Updated product.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.Service.Service.Purchase(KSR.Product.AbstractGood)">
+            <summary>
+            Method of purchase of product.
+            </summary>
+            <param name="product">Purchased product.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.Purchase(System.Collections.Generic.IEnumerable{KSR.Product.AbstractGood})">
+            <summary>
+            Method of purchasing several products.
+            </summary>
+            <param name="products">Set of purchased products.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.GetList">
+            <summary>
+            Get a list of purchased products.
+            </summary>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.DoBuy(KSR.Product.AbstractGood)">
+            <summary>
+            Purchase the selected product.
+            </summary>
+            <param name="product">Selected product.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.DoBuy(System.Collections.Generic.IEnumerable{KSR.Product.AbstractGood})">
+            <summary>
+            Purchase the selected products.
+            </summary>
+            <param name="products">Selected products.</param>
+            <returns>Returns the purchase price.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.DoRegistr(KSR.Product.AbstractGood)">
+            <summary>
+            Registration of the checked product.
+            </summary>
+            <param name="product">The resulting product.</param>
+        </member>
+        <member name="M:KSR.Service.Service.DoUnregistr(System.Int32)">
+            <summary>
+            Deregistration of products.
+            </summary>
+            <param name="id">The resulting product id.</param>
+        </member>
+        <member name="M:KSR.Service.Service.DoGetProductName(System.String)">
+            <summary>
+            Method of getting the product
+            </summary>
+            <param name="name">Name of the product.</param>
+            <returns>The resulting product</returns>
+        </member>
+        <member name="M:KSR.Service.Service.DoGetProductId(System.Int32)">
+            <summary>
+            Method of checking product with ID.
+            </summary>
+            <param name="id">Id of the product.</param>
+            <returns>The resulting product.</returns>
+        </member>
+        <member name="M:KSR.Service.Service.DoUpdate(KSR.Product.AbstractGood)">
+            <summary>
+            Method of checking product with ID.
+            </summary>
+            <param name="product">Id of the product.</param>
+            <returns>The resulting product.</returns>
+        </member>
+        <member name="E:KSR.Service.Service.WasBought">
+            <summary>
+            EventHandler with <see cref="T:KSR.Service.PurchaseEventArgs"/>. To inform a buyer about the completion of the purchase.
+            </summary>
+        </member>
+    </members>
+</doc>

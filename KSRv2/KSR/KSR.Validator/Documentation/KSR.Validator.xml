@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KSR.Validator</name>
+    </assembly>
+    <members>
+        <member name="T:KSR.ValidatorHelper.ValidationHelper">
+            <summary>
+            Class for throw exception on selected situation.
+            </summary>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.NullObject(System.Object,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.ArgumentNullException"/> if the object is null.
+            </summary>
+            <param name="obj">inspected object.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.NullObject(System.Object,System.Exception)">
+            <summary>
+            The method throws an <see cref="T:System.ArgumentNullException"/> if the object is null.
+            </summary>
+            <param name="obj">inspected object.</param>
+            <param name="exception">exception to call.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.NotNullObject(System.Object,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.ArgumentNullException"/> if the object is not null.
+            </summary>
+            <param name="obj">inspected object.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.ObjectNotType``1(System.Object,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.InvalidCastException"/> if the object is not setted type.
+            </summary>
+            <param name="obj">inspected object.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.ObjectIsType``1(System.Object,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.InvalidCastException"/> if the object is setted type.
+            </summary>
+            <param name="obj">inspected object.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.NullString(System.String,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.ArgumentNullException"/> if the string is null or <see cref="T:System.Empty"/> or WhiteSpace.
+            </summary>
+            <param name="str">inspected string.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.NotNullString(System.String,System.String)">
+            <summary>
+            The method throws an <see cref="T:System.ArgumentNullException"/> if the string is not null or <see cref="T:System.Empty"/> or WhiteSpace.
+            </summary>
+            <param name="str">inspected string.</param>
+            <param name="message">exception message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:KSR.ValidatorHelper.ValidationHelper.ProductValidation(KSR.Product.AbstractGood)">
+            <summary>
+            Product verification method.
+            </summary>
+            <param name="product">Product under test.</param>
+        </member>
+    </members>
+</doc>
